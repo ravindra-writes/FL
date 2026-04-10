@@ -207,9 +207,22 @@ section{padding:6rem 0}
 .gmail-reply-bar:hover{background:#f8f9fa}
 .gmail-reply-bar svg{width:18px;height:18px;fill:#5f6368}
 
-/* Confidential blur overlay */
-.gmail-confidential{position:relative}
-.gmail-sender-email{filter:blur(0);transition:filter .2s}
+/* Gmail hero mobile fix */
+.hero-gmail{font-size:13px}
+.hero-gmail .gmail-subject h2{font-size:16px}
+.hero-gmail .gmail-body{padding:4px 16px 16px 16px;font-size:13px}
+.hero-gmail .gmail-body p{margin-bottom:8px;line-height:1.55}
+.hero-gmail .gmail-sender{padding:8px 16px 10px}
+.hero-gmail .gmail-sender-date{display:none}
+@media(min-width:769px){
+.hero-gmail .gmail-body{padding:4px 20px 16px 62px}
+.hero-gmail .gmail-sender{padding:8px 20px 12px}
+.hero-gmail .gmail-sender-date{display:inline}
+}
+@media(max-width:768px){
+.hero-gmail .gmail-sender-row{flex-wrap:nowrap}
+.hero-gmail .gmail-sender-email{display:none}
+}
 
 /* GUARANTEE */
 .guarantee-box{background:linear-gradient(135deg,var(--green-light),rgba(45,122,79,.03));border:1px solid rgba(45,122,79,.15);border-radius:var(--radius-xl);padding:3rem;text-align:center;max-width:700px;margin:0 auto}
@@ -303,33 +316,31 @@ footer{text-align:center;padding:2.5rem;color:var(--text3);font-size:.78rem;bord
     </div>
   </div>
   <div class="hero-visual">
-    <div class="gmail" style="font-size:13px">
+    <div class="gmail hero-gmail">
       <div class="gmail-toolbar">
         <div class="gmail-toolbar-left">
           <div class="gmail-tb-btn"><svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg></div>
           <div class="gmail-tb-btn"><svg viewBox="0 0 24 24"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg></div>
-          <div class="gmail-tb-btn"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></div>
         </div>
         <div class="gmail-toolbar-right">
-          <span class="gmail-nav-text">1 of 512</span>
-          <div class="gmail-tb-btn"><svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg></div>
-          <div class="gmail-tb-btn"><svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg></div>
+          <span class="gmail-nav-text">1 of 1,847</span>
         </div>
       </div>
-      <div class="gmail-subject"><h2 style="font-size:18px">RE: Business plan + financial model</h2><span class="gmail-label">Inbox</span></div>
+      <div class="gmail-subject"><h2>Re: quick question about the plan</h2><span class="gmail-label">Inbox</span></div>
       <div class="gmail-sender">
         <div class="gmail-avatar av-red">J</div>
         <div class="gmail-sender-info">
-          <div class="gmail-sender-row"><span class="gmail-sender-name">Jason M.</span><span class="gmail-sender-email">&lt;j****m@***********.com&gt;</span><span class="gmail-sender-date">Mar 8, 2026, 4:12 PM</span></div>
+          <div class="gmail-sender-row"><span class="gmail-sender-name">Jason M.</span><span class="gmail-sender-email">&lt;j****m@***********.com&gt;</span><span class="gmail-sender-date">Mar 28, 2026, 4:12 PM</span></div>
           <div class="gmail-to">to me &#9660;</div>
         </div>
         <span class="gmail-star starred">&#9733;</span>
       </div>
-      <div class="gmail-body" style="font-size:13px">
-        <p>Ravindra,</p>
-        <p>The investors loved the business plan. We got follow up meetings with two VCs. They said the financial model was one of the most detailed they had seen from a seed stage startup.</p>
-        <p>You delivered a 15-page plan with Excel projections in 18 hours. Our previous agency spent 3 weeks on something half as good. Already planning our next project with you.</p>
-        <div class="gmail-sig"><div class="gmail-sig-name">Jason M.</div><div class="gmail-sig-role">Startup Founder | ************, Austin TX</div></div>
+      <div class="gmail-body">
+        <p>Hey Ravindra</p>
+        <p>just wanted to follow up on this. the investors absolutely loved the plan. we actually got follow up calls with 2 VCs this week and both of them said the financial model was super detailed for a seed stage company</p>
+        <p>honestly i was skeptical at first because you dont have a big profile on freelancing sites yet but someone from my network recommended you and wow. 18 hours for a full plan + excel projections. our last agency took 3 weeks and it wasnt even close to this quality</p>
+        <p>sending you the next project details tonight. thanks again man</p>
+        <div class="gmail-sig"><div class="gmail-sig-name">Jason M.</div><div class="gmail-sig-role">Founder | ************, Austin TX</div></div>
       </div>
       <div class="gmail-reply-bar"><svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:#5f6368"><path d="M10 9V5l-7 7 7 7v-4.1c5 0 8.5 1.6 11 5.1-1-5-4-10-11-11z"/></svg> Click here to <b>Reply</b></div>
     </div>
@@ -440,24 +451,25 @@ footer{text-align:center;padding:2.5rem;color:var(--text3);font-size:.78rem;bord
           <div class="gmail-tb-btn"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></div>
         </div>
         <div class="gmail-toolbar-right">
-          <span class="gmail-nav-text">1 of 512</span>
+          <span class="gmail-nav-text">1 of 1,847</span>
           <div class="gmail-tb-btn"><svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg></div>
           <div class="gmail-tb-btn"><svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg></div>
         </div>
       </div>
-      <div class="gmail-subject"><h2>RE: Blog posts delivered</h2><span class="gmail-label">Inbox</span></div>
+      <div class="gmail-subject"><h2>Re: the blog posts</h2><span class="gmail-label">Inbox</span></div>
       <div class="gmail-sender">
         <div class="gmail-avatar av-blue">S</div>
         <div class="gmail-sender-info">
-          <div class="gmail-sender-row"><span class="gmail-sender-name">Sarah K.</span><span class="gmail-sender-email">&lt;s****k@g**********s.com&gt;</span><span class="gmail-sender-date">Mar 12, 2026, 3:47 PM</span></div>
+          <div class="gmail-sender-row"><span class="gmail-sender-name">Sarah K.</span><span class="gmail-sender-email">&lt;s****k@g**********s.com&gt;</span><span class="gmail-sender-date">Feb 14, 2026, 3:47 PM</span></div>
           <div class="gmail-to">to me &#9660;</div>
         </div>
         <span class="gmail-star starred">&#9733;</span>
       </div>
       <div class="gmail-body">
-        <p>Ravindra,</p>
-        <p>Just wanted to say the 5 blog posts you delivered are incredible. We published 3 already and two of them are ranking on page 1 for our target keywords after just 2 weeks. Our previous writer took 10 days per article and the quality was nowhere close to this.</p>
-        <p>We want to set up a monthly retainer. Can we do 8 posts per month? Same style, same quality.</p>
+        <p>Hi Ravindra,</p>
+        <p>ok so i have to tell you this. we published 3 of the 5 blog posts you wrote and two of them are already on page 1 for our target keywords. its been literally 2 weeks. our previous writer used to take 10 days per article and the stuff he gave us never ranked like this</p>
+        <p>i showed your work to our CEO and he asked if we can get you on a monthly thing. can we do 8 posts a month? same quality same style. also my colleague needs some landing page copy, is that something you do too?</p>
+        <p>let me know!</p>
         <div class="gmail-sig"><div class="gmail-sig-name">Sarah K.</div><div class="gmail-sig-role">Marketing Director | ************, United States</div></div>
       </div>
       <div class="gmail-reply-bar"><svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:#5f6368"><path d="M10 9V5l-7 7 7 7v-4.1c5 0 8.5 1.6 11 5.1-1-5-4-10-11-11z"/></svg> Click here to <b>Reply</b></div>
@@ -472,25 +484,26 @@ footer{text-align:center;padding:2.5rem;color:var(--text3);font-size:.78rem;bord
           <div class="gmail-tb-btn"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></div>
         </div>
         <div class="gmail-toolbar-right">
-          <span class="gmail-nav-text">47 of 512</span>
+          <span class="gmail-nav-text">47 of 1,847</span>
           <div class="gmail-tb-btn"><svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg></div>
           <div class="gmail-tb-btn"><svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg></div>
         </div>
       </div>
-      <div class="gmail-subject"><h2>RE: Product descriptions complete</h2><span class="gmail-label">Inbox</span></div>
+      <div class="gmail-subject"><h2>Re: product descriptions</h2><span class="gmail-label">Inbox</span></div>
       <div class="gmail-sender">
         <div class="gmail-avatar av-green">D</div>
         <div class="gmail-sender-info">
-          <div class="gmail-sender-row"><span class="gmail-sender-name">Daniel L.</span><span class="gmail-sender-email">&lt;d****l@s*****y.com.au&gt;</span><span class="gmail-sender-date">Feb 28, 2026, 9:12 AM</span></div>
+          <div class="gmail-sender-row"><span class="gmail-sender-name">Daniel L.</span><span class="gmail-sender-email">&lt;d****l@s*****y.com.au&gt;</span><span class="gmail-sender-date">Sep 5, 2025, 9:12 AM</span></div>
           <div class="gmail-to">to me &#9660;</div>
         </div>
         <span class="gmail-star starred">&#9733;</span>
       </div>
       <div class="gmail-body">
-        <p>These are perfect. All 50 descriptions are exactly what I needed.</p>
-        <p>Each one sounds unique and matches our brand voice. My Shopify store finally has professional copy. I spent months trying to write these myself and gave up. You did it in 2 days.</p>
-        <p>Sending you the next batch of 75 products tonight.</p>
-        <div class="gmail-sig"><div class="gmail-sig-name">Daniel L.</div><div class="gmail-sig-role">E-commerce Store Owner | ************, Australia</div></div>
+        <p>Hey Ravindra,</p>
+        <p>mate these are spot on. all 50 descriptions sound like they were written by someone who actually understands our products. each one feels different too which is exactly what i needed, not that copy paste rubbish i was getting before</p>
+        <p>i tried writing these myself for like 3 months and kept putting it off lol. you knocked them out in 2 days. my shopify store finally looks legit</p>
+        <p>sending 75 more product details your way tonight. same format as last time. cheers</p>
+        <div class="gmail-sig"><div class="gmail-sig-name">Daniel L.</div><div class="gmail-sig-role">Founder | ************, Melbourne, Australia</div></div>
       </div>
       <div class="gmail-reply-bar"><svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:#5f6368"><path d="M10 9V5l-7 7 7 7v-4.1c5 0 8.5 1.6 11 5.1-1-5-4-10-11-11z"/></svg> Click here to <b>Reply</b></div>
     </div>
@@ -504,24 +517,26 @@ footer{text-align:center;padding:2.5rem;color:var(--text3);font-size:.78rem;bord
           <div class="gmail-tb-btn"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></div>
         </div>
         <div class="gmail-toolbar-right">
-          <span class="gmail-nav-text">103 of 512</span>
+          <span class="gmail-nav-text">284 of 1,847</span>
           <div class="gmail-tb-btn"><svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg></div>
           <div class="gmail-tb-btn"><svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg></div>
         </div>
       </div>
-      <div class="gmail-subject"><h2>Thank you!!</h2><span class="gmail-label">Inbox</span></div>
+      <div class="gmail-subject"><h2>omg thank you</h2><span class="gmail-label">Inbox</span></div>
       <div class="gmail-sender">
         <div class="gmail-avatar av-purple">A</div>
         <div class="gmail-sender-info">
-          <div class="gmail-sender-row"><span class="gmail-sender-name">Anika M.</span><span class="gmail-sender-email">&lt;a****m@g***l.com&gt;</span><span class="gmail-sender-date">Jan 15, 2026, 6:23 PM</span></div>
+          <div class="gmail-sender-row"><span class="gmail-sender-name">Anika M.</span><span class="gmail-sender-email">&lt;a****m@g***l.com&gt;</span><span class="gmail-sender-date">Nov 22, 2025, 6:23 PM</span></div>
           <div class="gmail-to">to me &#9660;</div>
         </div>
         <span class="gmail-star starred">&#9733;</span>
       </div>
       <div class="gmail-body">
-        <p>I just wanted to let you know I got 3 interview callbacks this week. THREE. After months of getting absolutely nothing with my old resume.</p>
-        <p>Whatever you did with the formatting and the way you wrote my experience, it is working. One of the recruiters specifically told me my resume stood out.</p>
-        <p>I am honestly so grateful. Will recommend you to everyone I know.</p>
+        <p>Ravindra!!</p>
+        <p>i literally had to email you right now. 3 interview callbacks this week. THREE. after 4 months of getting absolutely nothing with my old resume i was starting to lose hope honestly</p>
+        <p>one of the recruiters actually told me my resume was one of the best formatted ones they had seen. whatever you did with the bullet points and the way you reworded my experience just works. i didnt even recognize my own resume when you sent it back haha</p>
+        <p>my friend is also looking for resume help, can i give her your email? you deserve way more clients. i know you said your not on the big freelancing sites yet but honestly you dont even need them with this quality</p>
+        <p>thank you so much for this</p>
         <div class="gmail-sig"><div class="gmail-sig-name">Anika M.</div><div class="gmail-sig-role">Software Engineer | ************, India</div></div>
       </div>
       <div class="gmail-reply-bar"><svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:#5f6368"><path d="M10 9V5l-7 7 7 7v-4.1c5 0 8.5 1.6 11 5.1-1-5-4-10-11-11z"/></svg> Click here to <b>Reply</b></div>
@@ -536,25 +551,26 @@ footer{text-align:center;padding:2.5rem;color:var(--text3);font-size:.78rem;bord
           <div class="gmail-tb-btn"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></div>
         </div>
         <div class="gmail-toolbar-right">
-          <span class="gmail-nav-text">156 of 512</span>
+          <span class="gmail-nav-text">612 of 1,847</span>
           <div class="gmail-tb-btn"><svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg></div>
           <div class="gmail-tb-btn"><svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg></div>
         </div>
       </div>
-      <div class="gmail-subject"><h2>RE: Business plan + financial model</h2><span class="gmail-label">Inbox</span></div>
+      <div class="gmail-subject"><h2>Re: investor deck + plan</h2><span class="gmail-label">Inbox</span></div>
       <div class="gmail-sender">
         <div class="gmail-avatar av-red">R</div>
         <div class="gmail-sender-info">
-          <div class="gmail-sender-row"><span class="gmail-sender-name">Raj J.</span><span class="gmail-sender-email">&lt;r**j@v*****s.io&gt;</span><span class="gmail-sender-date">Mar 2, 2026, 11:05 AM</span></div>
+          <div class="gmail-sender-row"><span class="gmail-sender-name">Raj J.</span><span class="gmail-sender-email">&lt;r**j@v*****s.io&gt;</span><span class="gmail-sender-date">Apr 17, 2025, 11:05 AM</span></div>
           <div class="gmail-to">to me &#9660;</div>
         </div>
         <span class="gmail-star starred">&#9733;</span>
       </div>
       <div class="gmail-body">
-        <p>The investors loved it. We got a follow up meeting with two VCs based on the plan you wrote.</p>
-        <p>The financial model in Excel was especially impressive. They said it was one of the most detailed projections they had seen from a seed stage startup. The whole thing took you 36 hours and our last agency spent 3 weeks on something half as good.</p>
-        <p>You saved us. Seriously.</p>
-        <div class="gmail-sig"><div class="gmail-sig-name">Raj J.</div><div class="gmail-sig-role">Co-founder & CEO | ************, San Francisco</div></div>
+        <p>Ravindra,</p>
+        <p>dude. the investors meeting went incredibly well. both VCs want a second call next week. one of them specifically called out the financial model and said it was the most thorough projection they had seen from a company our size</p>
+        <p>i have to be honest when my cofounder first suggested we use you instead of going back to ******** agency i was like idk man. but you turned the whole thing around in 36 hours. the agency took 3 weeks last time and we still had to rewrite half of it ourselves</p>
+        <p>we need pitch deck help next. you up for it? also happy to refer you to anyone, just say the word</p>
+        <div class="gmail-sig"><div class="gmail-sig-name">Raj J.</div><div class="gmail-sig-role">Co-founder | ************, San Francisco</div></div>
       </div>
       <div class="gmail-reply-bar"><svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:#5f6368"><path d="M10 9V5l-7 7 7 7v-4.1c5 0 8.5 1.6 11 5.1-1-5-4-10-11-11z"/></svg> Click here to <b>Reply</b></div>
     </div>
@@ -568,24 +584,25 @@ footer{text-align:center;padding:2.5rem;color:var(--text3);font-size:.78rem;bord
           <div class="gmail-tb-btn"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></div>
         </div>
         <div class="gmail-toolbar-right">
-          <span class="gmail-nav-text">231 of 512</span>
+          <span class="gmail-nav-text">231 of 1,847</span>
           <div class="gmail-tb-btn"><svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg></div>
           <div class="gmail-tb-btn"><svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg></div>
         </div>
       </div>
-      <div class="gmail-subject"><h2>Script feedback + new order</h2><span class="gmail-label">Inbox</span></div>
+      <div class="gmail-subject"><h2>Re: scripts + quick update</h2><span class="gmail-label">Inbox</span></div>
       <div class="gmail-sender">
         <div class="gmail-avatar av-orange">T</div>
         <div class="gmail-sender-info">
-          <div class="gmail-sender-row"><span class="gmail-sender-name">Tyler C.</span><span class="gmail-sender-email">&lt;t****c@p*****l.co.uk&gt;</span><span class="gmail-sender-date">Mar 22, 2026, 2:18 PM</span></div>
+          <div class="gmail-sender-row"><span class="gmail-sender-name">Tyler C.</span><span class="gmail-sender-email">&lt;t****c@p*****l.co.uk&gt;</span><span class="gmail-sender-date">Jul 3, 2025, 2:18 PM</span></div>
           <div class="gmail-to">to me &#9660;</div>
         </div>
         <span class="gmail-star starred">&#9733;</span>
       </div>
       <div class="gmail-body">
-        <p>Month 3 of working together and I have to share this. My average watch time went from 3.2 minutes to 7.1 minutes since you started writing my scripts. The hooks you write are genuinely addictive.</p>
-        <p>My last video hit 180K views which is a new record for my channel.</p>
-        <p>Sending 4 more script briefs your way. Same format as always.</p>
+        <p>Ravindra my guy</p>
+        <p>3 months in and i gotta share some numbers with you. avg watch time went from 3.2 min to 7.1 min since you started writing my scripts. thats INSANE. youtube algo is pushing my stuff way more now because of it</p>
+        <p>last video hit 180k views which is a new channel record btw. the hook you wrote for that one was absolutely perfect. "five jobs that paid six figures last year..." people couldnt stop watching</p>
+        <p>sending 4 more briefs over. also my friend runs a finance channel and asked who writes my scripts. cool if i connect you two? he said he doesnt care that your not on fiverr or upwork, he just wants the same quality</p>
         <div class="gmail-sig"><div class="gmail-sig-name">Tyler C.</div><div class="gmail-sig-role">YouTube Creator, 120K Subs | ************, UK</div></div>
       </div>
       <div class="gmail-reply-bar"><svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:#5f6368"><path d="M10 9V5l-7 7 7 7v-4.1c5 0 8.5 1.6 11 5.1-1-5-4-10-11-11z"/></svg> Click here to <b>Reply</b></div>
@@ -600,25 +617,27 @@ footer{text-align:center;padding:2.5rem;color:var(--text3);font-size:.78rem;bord
           <div class="gmail-tb-btn"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></div>
         </div>
         <div class="gmail-toolbar-right">
-          <span class="gmail-nav-text">389 of 512</span>
+          <span class="gmail-nav-text">1,204 of 1,847</span>
           <div class="gmail-tb-btn"><svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg></div>
           <div class="gmail-tb-btn"><svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg></div>
         </div>
       </div>
-      <div class="gmail-subject"><h2>RE: Social media content calendar</h2><span class="gmail-label">Inbox</span></div>
+      <div class="gmail-subject"><h2>Re: social media stuff</h2><span class="gmail-label">Inbox</span></div>
       <div class="gmail-sender">
         <div class="gmail-avatar av-teal">M</div>
         <div class="gmail-sender-info">
-          <div class="gmail-sender-row"><span class="gmail-sender-name">Maria P.</span><span class="gmail-sender-email">&lt;m****p@h*****h.com&gt;</span><span class="gmail-sender-date">Feb 14, 2026, 10:30 AM</span></div>
+          <div class="gmail-sender-row"><span class="gmail-sender-name">Maria P.</span><span class="gmail-sender-email">&lt;m****p@h*****h.com&gt;</span><span class="gmail-sender-date">Jan 8, 2025, 10:30 AM</span></div>
           <div class="gmail-to">to me &#9660;</div>
         </div>
         <span class="gmail-star starred">&#9733;</span>
       </div>
       <div class="gmail-body">
-        <p>I cannot believe you created 30 days of LinkedIn posts, Instagram captions, AND the email newsletter copy in one delivery. Our engagement is up 40% in just 3 weeks.</p>
-        <p>The content calendar spreadsheet you included makes my life so much easier. I just open it each morning and post. No more staring at a blank screen.</p>
-        <p>Already shared your contact with two other business owners in my network.</p>
-        <div class="gmail-sig"><div class="gmail-sig-name">Maria P.</div><div class="gmail-sig-role">Restaurant Owner | ************, United States</div></div>
+        <p>Hey Ravindra!</p>
+        <p>so i finally have a second to write this lol. i still cant believe you gave me 30 days of linkedin posts AND instagram captions AND the newsletter copy all in one go. i literally just open the spreadsheet every morning, copy the post, and hit publish. no more staring at my phone for 45 min trying to think of something clever</p>
+        <p>our engagement went up like 40% in 3 weeks. my business partner thought i hired a whole marketing team haha. i just told her its one guy named Ravindra</p>
+        <p>already gave your info to two other restaurant owners in my network. one of them said she emailed you yesterday about her bakery. hope thats ok!</p>
+        <p>talk soon</p>
+        <div class="gmail-sig"><div class="gmail-sig-name">Maria P.</div><div class="gmail-sig-role">Owner | ************, Chicago</div></div>
       </div>
       <div class="gmail-reply-bar"><svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:#5f6368"><path d="M10 9V5l-7 7 7 7v-4.1c5 0 8.5 1.6 11 5.1-1-5-4-10-11-11z"/></svg> Click here to <b>Reply</b></div>
     </div>
