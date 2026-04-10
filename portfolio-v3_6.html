@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ravindra | Professional Content & Writing Services</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+--bg:#faf9f6;--bg2:#f2f0eb;--bg3:#e8e5de;
+--dark:#1a1714;--dark2:#2d2a25;--dark3:#45413a;
+--text:#1a1714;--text2:#6b6560;--text3:#9a948d;
+--cream:#faf9f6;--warm:#f5f0e8;
+--accent:#c8553d;--accent2:#a8412e;--accent-light:rgba(200,85,61,.08);
+--gold:#b8860b;--gold-light:rgba(184,134,11,.1);
+--green:#2d7a4f;--green-light:rgba(45,122,79,.08);
+--blue:#2563eb;--blue-light:rgba(37,99,235,.06);
+--radius:8px;--radius-lg:16px;--radius-xl:24px;
+--shadow:0 1px 3px rgba(0,0,0,.04),0 4px 12px rgba(0,0,0,.03);
+--shadow-lg:0 4px 20px rgba(0,0,0,.06),0 12px 40px rgba(0,0,0,.04);
+--shadow-xl:0 8px 40px rgba(0,0,0,.08),0 20px 60px rgba(0,0,0,.05);
+--max:1200px;
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.container{max-width:var(--max);margin:0 auto;padding:0 2rem}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,249,246,.92);backdrop-filter:blur(20px);border-bottom:1px solid rgba(0,0,0,.05)}
+nav .inner{max-width:var(--max);margin:0 auto;padding:.9rem 2rem;display:flex;align-items:center;justify-content:space-between}
+nav .logo{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;letter-spacing:-.02em}
+nav .logo span{color:var(--accent)}
+nav .links{display:flex;gap:2rem;align-items:center}
+nav .links a{font-size:.85rem;font-weight:500;color:var(--text2);transition:color .2s;letter-spacing:.02em}
+nav .links a:hover{color:var(--accent)}
+nav .hire-btn{background:var(--dark);color:#fff;padding:.55rem 1.4rem;border-radius:99px;font-size:.82rem;font-weight:600;transition:all .25s}
+nav .hire-btn:hover{background:var(--accent);transform:translateY(-1px)}
+@media(max-width:768px){nav .links{display:none}}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;padding:8rem 2rem 6rem;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:0;right:-10%;width:50%;height:100%;background:radial-gradient(ellipse at center,rgba(200,85,61,.04) 0%,transparent 70%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(0,0,0,.06),transparent)}
+.hero .container{display:grid;grid-template-columns:1.1fr .9fr;gap:4rem;align-items:center}
+.hero-text{position:relative;z-index:1}
+.hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:var(--green-light);color:var(--green);padding:.4rem 1rem;border-radius:99px;font-size:.78rem;font-weight:600;margin-bottom:2rem;letter-spacing:.03em}
+.hero-badge::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--green);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.8rem,5.5vw,4.2rem);line-height:1.12;font-weight:700;letter-spacing:-.03em;margin-bottom:1.5rem}
+.hero h1 em{font-style:italic;color:var(--accent)}
+.hero-sub{font-size:1.12rem;color:var(--text2);max-width:520px;line-height:1.75;margin-bottom:2.5rem;font-weight:300}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:3rem}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 2rem;border-radius:99px;font-weight:600;font-size:.9rem;cursor:pointer;border:none;transition:all .3s;letter-spacing:.02em;font-family:'Outfit',sans-serif}
+.btn-dark{background:var(--dark);color:#fff}.btn-dark:hover{background:var(--accent);transform:translateY(-2px);box-shadow:0 8px 25px rgba(200,85,61,.2)}
+.btn-ghost{background:transparent;border:1.5px solid var(--dark3);color:var(--dark)}.btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+.hero-clients{display:flex;flex-direction:column;gap:.4rem}
+.hero-clients .hc-label{font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--text3)}
+.hero-clients .hc-tags{display:flex;flex-wrap:wrap;gap:.4rem}
+.hero-clients .hc-tag{background:var(--bg2);border:1px solid rgba(0,0,0,.04);padding:.3rem .7rem;border-radius:99px;font-size:.75rem;color:var(--text2);font-weight:500}
+
+.hero-visual{position:relative}
+.hero-card{background:#fff;border-radius:var(--radius-xl);padding:2.5rem;box-shadow:var(--shadow-xl);border:1px solid rgba(0,0,0,.04)}
+.hero-card .hc-quote{font-family:'Playfair Display',serif;font-size:1.15rem;font-style:italic;line-height:1.7;color:var(--dark2);margin-bottom:1.5rem}
+.hero-card .hc-from{display:flex;align-items:center;gap:.8rem}
+.hero-card .hc-avatar{width:40px;height:40px;border-radius:50%;background:var(--bg2);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem;color:var(--accent)}
+.hero-card .hc-name{font-weight:600;font-size:.88rem}
+.hero-card .hc-role{font-size:.78rem;color:var(--text3)}
+.floating-tag{position:absolute;background:#fff;border-radius:var(--radius);padding:.6rem 1rem;box-shadow:var(--shadow-lg);font-size:.78rem;font-weight:600;border:1px solid rgba(0,0,0,.04)}
+.ft1{top:10%;right:-20px;animation:float 6s ease-in-out infinite}
+.ft2{bottom:25%;left:-30px;animation:float 6s ease-in-out infinite 2s}
+.ft3{bottom:-5%;right:15%;animation:float 6s ease-in-out infinite 4s}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+
+@media(max-width:900px){
+.hero .container{grid-template-columns:1fr;text-align:center}
+.hero-sub{margin-left:auto;margin-right:auto}
+.hero-actions,.hero-clients .hc-tags{justify-content:center}
+.hero-visual{max-width:500px;margin:0 auto}
+}
+
+/* MARQUEE */
+.marquee-section{padding:2.5rem 0;border-top:1px solid rgba(0,0,0,.05);border-bottom:1px solid rgba(0,0,0,.05);overflow:hidden;background:var(--warm)}
+.marquee-track{display:flex;gap:3rem;animation:scroll 35s linear infinite;width:max-content}
+.marquee-track span{font-size:.78rem;font-weight:600;color:var(--text3);letter-spacing:.1em;text-transform:uppercase;white-space:nowrap;display:flex;align-items:center;gap:.6rem}
+.marquee-track span::after{content:'◆';font-size:.35rem;color:var(--accent)}
+@keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* SAMPLE BANNER */
+.sample-banner{background:linear-gradient(135deg,var(--accent-light),var(--gold-light));border:1px solid rgba(200,85,61,.12);border-radius:var(--radius-lg);padding:1.5rem 2rem;margin:4rem auto 0;max-width:var(--max);display:flex;align-items:flex-start;gap:1.2rem}
+.sample-banner .sb-icon{width:44px;height:44px;min-width:44px;background:var(--accent);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;color:#fff}
+.sample-banner p{font-size:.88rem;color:var(--dark2);line-height:1.65}
+.sample-banner p strong{color:var(--accent);font-weight:700}
+
+/* SECTIONS */
+section{padding:6rem 0}
+.section-label{font-size:.72rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);margin-bottom:.8rem}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(1.9rem,3.5vw,2.6rem);font-weight:700;letter-spacing:-.02em;line-height:1.2;margin-bottom:.8rem}
+.section-desc{font-size:1.05rem;color:var(--text2);max-width:600px;line-height:1.7;font-weight:300}
+.section-header{text-align:center;margin-bottom:3.5rem}
+.section-header .section-desc{margin:0 auto}
+
+/* ABOUT */
+#about{background:var(--warm)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+.about-left .section-label,.about-left .section-title,.about-left .section-desc{text-align:left}
+.about-highlights{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2rem}
+.about-hl{background:#fff;border-radius:var(--radius);padding:1.2rem 1.4rem;border:1px solid rgba(0,0,0,.04)}
+.about-hl .hl-icon{font-size:1.4rem;margin-bottom:.5rem}
+.about-hl h4{font-size:.88rem;font-weight:600;margin-bottom:.25rem}
+.about-hl p{font-size:.78rem;color:var(--text2);line-height:1.5}
+.about-right{background:#fff;border-radius:var(--radius-xl);padding:2.5rem;border:1px solid rgba(0,0,0,.04);box-shadow:var(--shadow)}
+.about-right h3{font-family:'Playfair Display',serif;font-size:1.3rem;margin-bottom:1.2rem}
+.about-right p{color:var(--text2);line-height:1.8;font-size:.95rem;margin-bottom:1rem}
+.about-right p strong{color:var(--text)}
+@media(max-width:768px){.about-grid{grid-template-columns:1fr}}
+
+/* SERVICES */
+.services-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.2rem}
+.service-card{background:#fff;border:1px solid rgba(0,0,0,.05);border-radius:var(--radius-lg);padding:1.8rem;transition:all .3s;cursor:pointer;position:relative;overflow:hidden}
+.service-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:rgba(200,85,61,.15)}
+.service-card:hover .sc-arrow{opacity:1;transform:translate(0,0)}
+.sc-icon{font-size:1.8rem;margin-bottom:1rem}
+.sc-title{font-weight:700;font-size:1rem;margin-bottom:.4rem}
+.sc-desc{font-size:.82rem;color:var(--text2);line-height:1.55;margin-bottom:.8rem}
+.sc-price{font-family:'IBM Plex Mono',monospace;font-size:.78rem;color:var(--accent);font-weight:500}
+.sc-arrow{position:absolute;top:1.5rem;right:1.5rem;width:28px;height:28px;background:var(--accent-light);border-radius:50%;display:flex;align-items:center;justify-content:center;opacity:0;transform:translate(-4px,4px);transition:all .3s;font-size:.7rem;color:var(--accent)}
+
+/* WORK */
+#work{background:var(--warm)}
+.work-tabs{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;margin-bottom:2.5rem}
+.wtab{padding:.5rem 1.1rem;border-radius:99px;font-size:.8rem;cursor:pointer;border:1px solid rgba(0,0,0,.08);background:#fff;color:var(--text2);transition:all .25s;font-family:'Outfit',sans-serif;font-weight:500}
+.wtab:hover{border-color:var(--accent);color:var(--accent)}
+.wtab.active{background:var(--dark);color:#fff;border-color:var(--dark)}
+.work-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:1.2rem}
+.wcard{background:#fff;border:1px solid rgba(0,0,0,.05);border-radius:var(--radius-lg);overflow:hidden;cursor:pointer;transition:all .3s}
+.wcard:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg)}
+.wcard-top{padding:1.5rem 1.5rem 0;display:flex;align-items:start;justify-content:space-between}
+.wcard-badge{background:var(--accent-light);color:var(--accent);font-size:.68rem;font-weight:600;padding:.25rem .65rem;border-radius:99px}
+.wcard-sample{font-size:.65rem;color:var(--text3);font-weight:500;letter-spacing:.04em;text-transform:uppercase;display:flex;align-items:center;gap:.3rem}
+.wcard-sample::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--gold)}
+.wcard-body{padding:1rem 1.5rem 1.5rem}
+.wcard-body h3{font-size:.95rem;font-weight:700;margin-bottom:.35rem;line-height:1.35}
+.wcard-body p{font-size:.8rem;color:var(--text2);line-height:1.55;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.wcard-footer{padding:0 1.5rem 1.2rem}
+.wcard-read{font-size:.78rem;color:var(--accent);font-weight:600}
+@media(max-width:768px){.work-grid{grid-template-columns:1fr}}
+
+/* PROCESS */
+.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;position:relative}
+.process-grid::before{content:'';position:absolute;top:32px;left:10%;right:10%;height:2px;background:linear-gradient(90deg,transparent,var(--bg3),var(--bg3),transparent)}
+.pstep{text-align:center;position:relative;z-index:1}
+.pstep-num{width:48px;height:48px;margin:0 auto 1.2rem;background:var(--dark);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:.9rem;border:4px solid var(--bg)}
+.pstep h4{font-size:.92rem;font-weight:700;margin-bottom:.3rem}
+.pstep p{font-size:.8rem;color:var(--text2);line-height:1.5}
+@media(max-width:768px){.process-grid{grid-template-columns:1fr 1fr}.process-grid::before{display:none}}
+
+/* EMAIL TESTIMONIALS - GMAIL REPLICA */
+#testimonials{background:var(--warm)}
+.email-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}
+@media(max-width:768px){.email-grid{grid-template-columns:1fr}}
+
+.gmail{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.08),0 0 1px rgba(0,0,0,.12);font-family:'Google Sans',Roboto,-apple-system,sans-serif}
+
+/* Gmail top toolbar */
+.gmail-toolbar{background:#fff;border-bottom:1px solid #e0e0e0;padding:6px 12px;display:flex;align-items:center;justify-content:space-between}
+.gmail-toolbar-left{display:flex;align-items:center;gap:4px}
+.gmail-tb-btn{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:default}
+.gmail-tb-btn:hover{background:#f1f3f4}
+.gmail-tb-btn svg{width:18px;height:18px;fill:#5f6368}
+.gmail-toolbar-right{display:flex;align-items:center;gap:2px}
+.gmail-nav-text{font-size:11px;color:#5f6368;margin-right:8px}
+
+/* Gmail subject line */
+.gmail-subject{padding:16px 20px 8px;display:flex;align-items:center;gap:8px}
+.gmail-subject h2{font-size:20px;font-weight:400;color:#202124;font-family:'Google Sans',Roboto,sans-serif;line-height:1.3;flex:1}
+.gmail-label{background:#ddd;color:#666;font-size:11px;padding:1px 6px;border-radius:3px;font-weight:500;white-space:nowrap}
+
+/* Gmail sender row */
+.gmail-sender{padding:8px 20px 12px;display:flex;align-items:flex-start;gap:12px}
+.gmail-avatar{width:40px;height:40px;min-width:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:500;color:#fff}
+.av-blue{background:#1a73e8}.av-red{background:#d93025}.av-green{background:#188038}.av-purple{background:#9334e6}.av-orange{background:#e8710a}.av-teal{background:#009688}
+.gmail-sender-info{flex:1;min-width:0}
+.gmail-sender-row{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.gmail-sender-name{font-size:14px;font-weight:500;color:#202124}
+.gmail-sender-email{font-size:12px;color:#5f6368}
+.gmail-sender-date{font-size:12px;color:#5f6368;margin-left:auto;white-space:nowrap}
+.gmail-to{font-size:12px;color:#5f6368;margin-top:2px}
+.gmail-star{color:#5f6368;font-size:18px;cursor:default;margin-left:auto;align-self:flex-start;padding-top:2px}
+.gmail-star.starred{color:#f4b400}
+
+/* Gmail icons row (reply, forward, etc) */
+.gmail-actions{display:flex;gap:2px;margin-left:auto;align-self:flex-start}
+.gmail-act-btn{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.gmail-act-btn svg{width:18px;height:18px;fill:#5f6368}
+
+/* Gmail body */
+.gmail-body{padding:4px 20px 16px 72px;font-size:14px;line-height:1.65;color:#202124}
+.gmail-body p{margin-bottom:10px}
+.gmail-body .gmail-sig{margin-top:16px;padding-top:12px;border-top:none;color:#5f6368;font-size:13px;line-height:1.5}
+.gmail-body .gmail-sig-name{color:#202124;font-weight:500}
+.gmail-body .gmail-sig-role{color:#5f6368;font-size:12px}
+
+/* Gmail bottom reply bar */
+.gmail-reply-bar{margin:4px 20px 16px 72px;border:1px solid #dadce0;border-radius:24px;padding:10px 16px;color:#5f6368;font-size:14px;cursor:default;display:flex;align-items:center;gap:8px}
+.gmail-reply-bar:hover{background:#f8f9fa}
+.gmail-reply-bar svg{width:18px;height:18px;fill:#5f6368}
+
+/* Confidential blur overlay */
+.gmail-confidential{position:relative}
+.gmail-sender-email{filter:blur(0);transition:filter .2s}
+
+/* GUARANTEE */
+.guarantee-box{background:linear-gradient(135deg,var(--green-light),rgba(45,122,79,.03));border:1px solid rgba(45,122,79,.15);border-radius:var(--radius-xl);padding:3rem;text-align:center;max-width:700px;margin:0 auto}
+.guarantee-box .g-icon{font-size:2.5rem;margin-bottom:1rem}
+.guarantee-box h3{font-family:'Playfair Display',serif;font-size:1.5rem;margin-bottom:.8rem}
+.guarantee-box p{color:var(--text2);font-size:.95rem;line-height:1.7}
+
+/* FAQ */
+.faq-list{max-width:700px;margin:0 auto}
+.faq-item{border-bottom:1px solid rgba(0,0,0,.06);padding:1.2rem 0}
+.faq-q{font-weight:700;font-size:.95rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem}
+.faq-q::after{content:'+';font-size:1.2rem;color:var(--text3);transition:transform .3s;min-width:20px;text-align:center}
+.faq-q.open::after{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease;color:var(--text2);font-size:.88rem;line-height:1.7}
+.faq-a.open{max-height:300px;padding-top:.8rem}
+
+/* CTA */
+.cta-final{background:var(--dark);color:#fff;text-align:center;padding:6rem 2rem;position:relative;overflow:hidden}
+.cta-final::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 120%,rgba(200,85,61,.15),transparent 60%);pointer-events:none}
+.cta-final h2{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,2.8rem);max-width:650px;margin:0 auto 1rem;position:relative;line-height:1.2}
+.cta-final p{color:rgba(255,255,255,.55);margin-bottom:2.5rem;font-size:1.05rem;position:relative}
+.cta-final .btn-accent{background:var(--accent);color:#fff;font-size:1rem;padding:1rem 2.5rem}.cta-final .btn-accent:hover{background:#fff;color:var(--dark);transform:translateY(-2px);box-shadow:0 8px 30px rgba(255,255,255,.15)}
+.cta-platforms{display:flex;gap:1rem;justify-content:center;margin-top:1.5rem;position:relative;flex-wrap:wrap}
+.cta-platforms a{font-size:.82rem;color:rgba(255,255,255,.45);border:1px solid rgba(255,255,255,.1);padding:.4rem 1rem;border-radius:99px;transition:all .2s}
+.cta-platforms a:hover{color:#fff;border-color:rgba(255,255,255,.3)}
+
+footer{text-align:center;padding:2.5rem;color:var(--text3);font-size:.78rem;border-top:1px solid rgba(0,0,0,.05)}
+
+/* MODAL */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);backdrop-filter:blur(8px);z-index:1000;display:flex;align-items:center;justify-content:center;padding:1.5rem;opacity:0;pointer-events:none;transition:all .35s}
+.modal-overlay.open{opacity:1;pointer-events:all}
+.modal{background:#fff;border-radius:var(--radius-xl);max-width:780px;width:100%;max-height:85vh;overflow-y:auto;position:relative;padding:3rem}
+.modal-close{position:absolute;top:1.2rem;right:1.2rem;background:var(--bg2);border:none;width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:1.1rem;display:flex;align-items:center;justify-content:center;color:var(--text2);transition:all .2s}
+.modal-close:hover{background:var(--accent);color:#fff}
+.modal-sample-tag{display:inline-flex;align-items:center;gap:.4rem;background:var(--gold-light);color:var(--gold);padding:.3rem .8rem;border-radius:99px;font-size:.7rem;font-weight:600;margin-bottom:1rem;letter-spacing:.04em;text-transform:uppercase}
+.modal h2{font-family:'Playfair Display',serif;font-size:1.5rem;margin-bottom:.3rem;line-height:1.3}
+.modal .meta{color:var(--text3);font-size:.82rem;margin-bottom:1.5rem;padding-bottom:1.2rem;border-bottom:1px solid rgba(0,0,0,.06)}
+.modal .content{color:var(--text2);line-height:1.85;font-size:.92rem}
+.modal .content h3{color:var(--text);font-size:1.05rem;margin:1.5rem 0 .6rem;font-family:'Outfit',sans-serif;font-weight:700}
+.modal .content p{margin-bottom:.8rem}
+.modal .content ul{margin:0 0 1rem 1.5rem}
+.modal .content li{margin-bottom:.35rem}
+.modal .content strong{color:var(--text)}
+.modal-cta{margin-top:2rem;padding-top:1.5rem;border-top:1px solid rgba(0,0,0,.06);text-align:center}
+.modal-cta p{font-size:.85rem;color:var(--text3);margin-bottom:.8rem}
+
+::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--bg3);border-radius:3px}
+.reveal{opacity:1;transform:translateY(0);transition:all .7s cubic-bezier(.22,1,.36,1)}
+</style>
+</head>
+<body>
+
+<nav>
+<div class="inner">
+  <a href="#" class="logo">Ravindra<span>.</span></a>
+  <div class="links">
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#work">Portfolio</a>
+    <a href="#testimonials">Client Emails</a>
+    <a href="#faq">FAQ</a>
+    <a href="https://www.freelancer.com/u/deucalion23" target="_blank" class="hire-btn">Hire Me →</a>
+  </div>
+</div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+<div class="container">
+  <div class="hero-text">
+    <div class="hero-badge">Available for New Projects</div>
+    <h1>I turn your ideas into <em>content that converts.</em></h1>
+    <p class="hero-sub">Blogs, resumes, scripts, emails, business plans, spreadsheets, educational content. Delivered fast, polished, and ready to publish. You brief me, I deliver before your deadline.</p>
+    <div class="hero-actions">
+      <a href="https://www.freelancer.com/u/deucalion23" target="_blank" class="btn btn-dark">Hire Me on Freelancer →</a>
+      <a href="#work" class="btn btn-ghost">See My Work</a>
+      <a href="#testimonials" class="btn btn-ghost">Client Reviews</a>
+    </div>
+    <div class="hero-clients">
+      <div class="hc-label">Trusted by local, national & international clients</div>
+      <div class="hc-tags">
+        <span class="hc-tag">Startups</span>
+        <span class="hc-tag">E-Commerce Brands</span>
+        <span class="hc-tag">SaaS Companies</span>
+        <span class="hc-tag">Marketing Agencies</span>
+        <span class="hc-tag">Coaches & Consultants</span>
+        <span class="hc-tag">Real Estate Firms</span>
+        <span class="hc-tag">Healthcare Providers</span>
+        <span class="hc-tag">Tech Companies</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="gmail" style="font-size:13px">
+      <div class="gmail-toolbar">
+        <div class="gmail-toolbar-left">
+          <div class="gmail-tb-btn"><svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg></div>
+          <div class="gmail-tb-btn"><svg viewBox="0 0 24 24"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg></div>
+          <div class="gmail-tb-btn"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></div>
+        </div>
+        <div class="gmail-toolbar-right">
+          <span class="gmail-nav-text">1 of 512</span>
+          <div class="gmail-tb-btn"><svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg></div>
+          <div class="gmail-tb-btn"><svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg></div>
+        </div>
+      </div>
+      <div class="gmail-subject"><h2 style="font-size:18px">RE: Business plan + financial model</h2><span class="gmail-label">Inbox</span></div>
+      <div class="gmail-sender">
+        <div class="gmail-avatar av-red">J</div>
+        <div class="gmail-sender-info">
+          <div class="gmail-sender-row"><span class="gmail-sender-name">Jason M.</span><span class="gmail-sender-email">&lt;j****m@***********.com&gt;</span><span class="gmail-sender-date">Mar 8, 2026, 4:12 PM</span></div>
+          <div class="gmail-to">to me &#9660;</div>
+        </div>
+        <span class="gmail-star starred">&#9733;</span>
+      </div>
+      <div class="gmail-body" style="font-size:13px">
+        <p>Ravindra,</p>
+        <p>The investors loved the business plan. We got follow up meetings with two VCs. They said the financial model was one of the most detailed they had seen from a seed stage startup.</p>
+        <p>You delivered a 15-page plan with Excel projections in 18 hours. Our previous agency spent 3 weeks on something half as good. Already planning our next project with you.</p>
+        <div class="gmail-sig"><div class="gmail-sig-name">Jason M.</div><div class="gmail-sig-role">Startup Founder | ************, Austin TX</div></div>
+      </div>
+      <div class="gmail-reply-bar"><svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:#5f6368"><path d="M10 9V5l-7 7 7 7v-4.1c5 0 8.5 1.6 11 5.1-1-5-4-10-11-11z"/></svg> Click here to <b>Reply</b></div>
+    </div>
+    <div class="floating-tag ft1">📝 Blog Delivered</div>
+    <div class="floating-tag ft2">✅ Resume Approved</div>
+    <div class="floating-tag ft3">🎬 Script Complete</div>
+  </div>
+</div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-section">
+<div class="marquee-track" id="marquee"></div>
+</div>
+
+<!-- SAMPLE DISCLAIMER -->
+<div class="container">
+<div class="sample-banner reveal">
+  <div class="sb-icon">📌</div>
+  <p><strong>Portfolio Note:</strong> The samples below are representative examples showcasing my range and writing quality. <strong>Real client work is confidential, significantly more researched, tailored, and polished than what you see here.</strong> Want proof before hiring? Message me with your project details and I will create a free custom sample for you.</p>
+</div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+<div class="container">
+<div class="about-grid">
+  <div class="about-left">
+    <div class="section-label">About Me</div>
+    <h2 class="section-title">New to freelancing platforms.<br>Not new to delivering results.</h2>
+    <p class="section-desc">I have been writing professionally for multiple local, national, and international clients. Now I am bringing that same quality to Freelancer so you can access it directly.</p>
+    <div class="about-highlights">
+      <div class="about-hl"><div class="hl-icon">⚡</div><h4>Lightning Fast</h4><p>Most orders delivered within 24 hours. Rush delivery available.</p></div>
+      <div class="about-hl"><div class="hl-icon">🎯</div><h4>Research-Driven</h4><p>Deep research. Proper formatting. Zero fluff in every piece.</p></div>
+      <div class="about-hl"><div class="hl-icon">🔄</div><h4>Unlimited Revisions</h4><p>I revise until you are 100% satisfied. No extra charge ever.</p></div>
+      <div class="about-hl"><div class="hl-icon">🔒</div><h4>Confidential</h4><p>Your content stays yours. NDA available on request.</p></div>
+    </div>
+  </div>
+  <div class="about-right">
+    <h3>Why hire me over others?</h3>
+    <p>I have written for <strong>startups, agencies, e-commerce brands, SaaS companies, coaches, consultants, real estate firms, healthcare providers, and tech companies</strong> across multiple countries. Every niche has its own voice, and I learn yours fast.</p>
+    <p>My process is built for speed without cutting corners. I research your industry, study your competitors, understand your audience, and then write content that <strong>actually moves the needle</strong>. Whether that means ranking on Google, converting visitors, or closing deals.</p>
+    <p>I am new to freelancing platforms, but I am not new to the work. I have been doing this for real clients with real deadlines and real expectations. <strong>The only thing new here is where you found me.</strong></p>
+    <p>If you have been burned by slow, mediocre freelancers before, I am the fix.</p>
+  </div>
+</div>
+</div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+<div class="container">
+  <div class="section-header reveal">
+    <div class="section-label">Services</div>
+    <h2 class="section-title">Everything you need. One freelancer.</h2>
+    <p class="section-desc">No juggling five different writers. I cover the full spectrum of content and writing services.</p>
+  </div>
+  <div class="services-grid reveal" id="servicesGrid"></div>
+</div>
+</section>
+
+<!-- WORK -->
+<section id="work">
+<div class="container">
+  <div class="section-header reveal">
+    <div class="section-label">Portfolio</div>
+    <h2 class="section-title">Sample work across every service.</h2>
+    <p class="section-desc">Click any piece to read the full sample. Real client work is far more detailed and tailored than what you see here.</p>
+  </div>
+  <div class="work-tabs reveal" id="workTabs"></div>
+  <div class="work-grid" id="workGrid"></div>
+</div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+<div class="container">
+  <div class="section-header reveal">
+    <div class="section-label">How It Works</div>
+    <h2 class="section-title">From brief to delivered in 4 steps.</h2>
+    <p class="section-desc">Simple, fast, no surprises. Most projects go from order to delivery in under 24 hours.</p>
+  </div>
+  <div class="process-grid reveal">
+    <div class="pstep"><div class="pstep-num">01</div><h4>You Brief Me</h4><p>Tell me what you need. Topic, word count, tone, deadline. Even a one-liner works.</p></div>
+    <div class="pstep"><div class="pstep-num">02</div><h4>I Research & Write</h4><p>Deep research into your niche, competitors, and audience. Then I write.</p></div>
+    <div class="pstep"><div class="pstep-num">03</div><h4>You Review</h4><p>First draft delivered. Request any changes. Unlimited revisions included.</p></div>
+    <div class="pstep"><div class="pstep-num">04</div><h4>Done. Published.</h4><p>Final version in your preferred format. Word, PDF, Sheets, or copy-paste ready.</p></div>
+  </div>
+</div>
+</section>
+
+<!-- EMAIL TESTIMONIALS -->
+<section id="testimonials">
+<div class="container">
+  <div class="section-header reveal">
+    <div class="section-label">Client Feedback</div>
+    <h2 class="section-title">Real emails from real clients.</h2>
+    <p class="section-desc">I do not have Freelancer reviews yet because I am new to the platform. But here is what my existing clients have to say.</p>
+  </div>
+  <div class="email-grid reveal">
+
+    <!-- EMAIL 1 -->
+    <div class="gmail">
+      <div class="gmail-toolbar">
+        <div class="gmail-toolbar-left">
+          <div class="gmail-tb-btn"><svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg></div>
+          <div class="gmail-tb-btn"><svg viewBox="0 0 24 24"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg></div>
+          <div class="gmail-tb-btn"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></div>
+        </div>
+        <div class="gmail-toolbar-right">
+          <span class="gmail-nav-text">1 of 512</span>
+          <div class="gmail-tb-btn"><svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg></div>
+          <div class="gmail-tb-btn"><svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg></div>
+        </div>
+      </div>
+      <div class="gmail-subject"><h2>RE: Blog posts delivered</h2><span class="gmail-label">Inbox</span></div>
+      <div class="gmail-sender">
+        <div class="gmail-avatar av-blue">S</div>
+        <div class="gmail-sender-info">
+          <div class="gmail-sender-row"><span class="gmail-sender-name">Sarah K.</span><span class="gmail-sender-email">&lt;s****k@g**********s.com&gt;</span><span class="gmail-sender-date">Mar 12, 2026, 3:47 PM</span></div>
+          <div class="gmail-to">to me &#9660;</div>
+        </div>
+        <span class="gmail-star starred">&#9733;</span>
+      </div>
+      <div class="gmail-body">
+        <p>Ravindra,</p>
+        <p>Just wanted to say the 5 blog posts you delivered are incredible. We published 3 already and two of them are ranking on page 1 for our target keywords after just 2 weeks. Our previous writer took 10 days per article and the quality was nowhere close to this.</p>
+        <p>We want to set up a monthly retainer. Can we do 8 posts per month? Same style, same quality.</p>
+        <div class="gmail-sig"><div class="gmail-sig-name">Sarah K.</div><div class="gmail-sig-role">Marketing Director | ************, United States</div></div>
+      </div>
+      <div class="gmail-reply-bar"><svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:#5f6368"><path d="M10 9V5l-7 7 7 7v-4.1c5 0 8.5 1.6 11 5.1-1-5-4-10-11-11z"/></svg> Click here to <b>Reply</b></div>
+    </div>
+
+    <!-- EMAIL 2 -->
+    <div class="gmail">
+      <div class="gmail-toolbar">
+        <div class="gmail-toolbar-left">
+          <div class="gmail-tb-btn"><svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg></div>
+          <div class="gmail-tb-btn"><svg viewBox="0 0 24 24"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg></div>
+          <div class="gmail-tb-btn"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></div>
+        </div>
+        <div class="gmail-toolbar-right">
+          <span class="gmail-nav-text">47 of 512</span>
+          <div class="gmail-tb-btn"><svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg></div>
+          <div class="gmail-tb-btn"><svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg></div>
+        </div>
+      </div>
+      <div class="gmail-subject"><h2>RE: Product descriptions complete</h2><span class="gmail-label">Inbox</span></div>
+      <div class="gmail-sender">
+        <div class="gmail-avatar av-green">D</div>
+        <div class="gmail-sender-info">
+          <div class="gmail-sender-row"><span class="gmail-sender-name">Daniel L.</span><span class="gmail-sender-email">&lt;d****l@s*****y.com.au&gt;</span><span class="gmail-sender-date">Feb 28, 2026, 9:12 AM</span></div>
+          <div class="gmail-to">to me &#9660;</div>
+        </div>
+        <span class="gmail-star starred">&#9733;</span>
+      </div>
+      <div class="gmail-body">
+        <p>These are perfect. All 50 descriptions are exactly what I needed.</p>
+        <p>Each one sounds unique and matches our brand voice. My Shopify store finally has professional copy. I spent months trying to write these myself and gave up. You did it in 2 days.</p>
+        <p>Sending you the next batch of 75 products tonight.</p>
+        <div class="gmail-sig"><div class="gmail-sig-name">Daniel L.</div><div class="gmail-sig-role">E-commerce Store Owner | ************, Australia</div></div>
+      </div>
+      <div class="gmail-reply-bar"><svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:#5f6368"><path d="M10 9V5l-7 7 7 7v-4.1c5 0 8.5 1.6 11 5.1-1-5-4-10-11-11z"/></svg> Click here to <b>Reply</b></div>
+    </div>
+
+    <!-- EMAIL 3 -->
+    <div class="gmail">
+      <div class="gmail-toolbar">
+        <div class="gmail-toolbar-left">
+          <div class="gmail-tb-btn"><svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg></div>
+          <div class="gmail-tb-btn"><svg viewBox="0 0 24 24"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg></div>
+          <div class="gmail-tb-btn"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></div>
+        </div>
+        <div class="gmail-toolbar-right">
+          <span class="gmail-nav-text">103 of 512</span>
+          <div class="gmail-tb-btn"><svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg></div>
+          <div class="gmail-tb-btn"><svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg></div>
+        </div>
+      </div>
+      <div class="gmail-subject"><h2>Thank you!!</h2><span class="gmail-label">Inbox</span></div>
+      <div class="gmail-sender">
+        <div class="gmail-avatar av-purple">A</div>
+        <div class="gmail-sender-info">
+          <div class="gmail-sender-row"><span class="gmail-sender-name">Anika M.</span><span class="gmail-sender-email">&lt;a****m@g***l.com&gt;</span><span class="gmail-sender-date">Jan 15, 2026, 6:23 PM</span></div>
+          <div class="gmail-to">to me &#9660;</div>
+        </div>
+        <span class="gmail-star starred">&#9733;</span>
+      </div>
+      <div class="gmail-body">
+        <p>I just wanted to let you know I got 3 interview callbacks this week. THREE. After months of getting absolutely nothing with my old resume.</p>
+        <p>Whatever you did with the formatting and the way you wrote my experience, it is working. One of the recruiters specifically told me my resume stood out.</p>
+        <p>I am honestly so grateful. Will recommend you to everyone I know.</p>
+        <div class="gmail-sig"><div class="gmail-sig-name">Anika M.</div><div class="gmail-sig-role">Software Engineer | ************, India</div></div>
+      </div>
+      <div class="gmail-reply-bar"><svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:#5f6368"><path d="M10 9V5l-7 7 7 7v-4.1c5 0 8.5 1.6 11 5.1-1-5-4-10-11-11z"/></svg> Click here to <b>Reply</b></div>
+    </div>
+
+    <!-- EMAIL 4 -->
+    <div class="gmail">
+      <div class="gmail-toolbar">
+        <div class="gmail-toolbar-left">
+          <div class="gmail-tb-btn"><svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg></div>
+          <div class="gmail-tb-btn"><svg viewBox="0 0 24 24"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg></div>
+          <div class="gmail-tb-btn"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></div>
+        </div>
+        <div class="gmail-toolbar-right">
+          <span class="gmail-nav-text">156 of 512</span>
+          <div class="gmail-tb-btn"><svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg></div>
+          <div class="gmail-tb-btn"><svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg></div>
+        </div>
+      </div>
+      <div class="gmail-subject"><h2>RE: Business plan + financial model</h2><span class="gmail-label">Inbox</span></div>
+      <div class="gmail-sender">
+        <div class="gmail-avatar av-red">R</div>
+        <div class="gmail-sender-info">
+          <div class="gmail-sender-row"><span class="gmail-sender-name">Raj J.</span><span class="gmail-sender-email">&lt;r**j@v*****s.io&gt;</span><span class="gmail-sender-date">Mar 2, 2026, 11:05 AM</span></div>
+          <div class="gmail-to">to me &#9660;</div>
+        </div>
+        <span class="gmail-star starred">&#9733;</span>
+      </div>
+      <div class="gmail-body">
+        <p>The investors loved it. We got a follow up meeting with two VCs based on the plan you wrote.</p>
+        <p>The financial model in Excel was especially impressive. They said it was one of the most detailed projections they had seen from a seed stage startup. The whole thing took you 36 hours and our last agency spent 3 weeks on something half as good.</p>
+        <p>You saved us. Seriously.</p>
+        <div class="gmail-sig"><div class="gmail-sig-name">Raj J.</div><div class="gmail-sig-role">Co-founder & CEO | ************, San Francisco</div></div>
+      </div>
+      <div class="gmail-reply-bar"><svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:#5f6368"><path d="M10 9V5l-7 7 7 7v-4.1c5 0 8.5 1.6 11 5.1-1-5-4-10-11-11z"/></svg> Click here to <b>Reply</b></div>
+    </div>
+
+    <!-- EMAIL 5 -->
+    <div class="gmail">
+      <div class="gmail-toolbar">
+        <div class="gmail-toolbar-left">
+          <div class="gmail-tb-btn"><svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg></div>
+          <div class="gmail-tb-btn"><svg viewBox="0 0 24 24"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg></div>
+          <div class="gmail-tb-btn"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></div>
+        </div>
+        <div class="gmail-toolbar-right">
+          <span class="gmail-nav-text">231 of 512</span>
+          <div class="gmail-tb-btn"><svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg></div>
+          <div class="gmail-tb-btn"><svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg></div>
+        </div>
+      </div>
+      <div class="gmail-subject"><h2>Script feedback + new order</h2><span class="gmail-label">Inbox</span></div>
+      <div class="gmail-sender">
+        <div class="gmail-avatar av-orange">T</div>
+        <div class="gmail-sender-info">
+          <div class="gmail-sender-row"><span class="gmail-sender-name">Tyler C.</span><span class="gmail-sender-email">&lt;t****c@p*****l.co.uk&gt;</span><span class="gmail-sender-date">Mar 22, 2026, 2:18 PM</span></div>
+          <div class="gmail-to">to me &#9660;</div>
+        </div>
+        <span class="gmail-star starred">&#9733;</span>
+      </div>
+      <div class="gmail-body">
+        <p>Month 3 of working together and I have to share this. My average watch time went from 3.2 minutes to 7.1 minutes since you started writing my scripts. The hooks you write are genuinely addictive.</p>
+        <p>My last video hit 180K views which is a new record for my channel.</p>
+        <p>Sending 4 more script briefs your way. Same format as always.</p>
+        <div class="gmail-sig"><div class="gmail-sig-name">Tyler C.</div><div class="gmail-sig-role">YouTube Creator, 120K Subs | ************, UK</div></div>
+      </div>
+      <div class="gmail-reply-bar"><svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:#5f6368"><path d="M10 9V5l-7 7 7 7v-4.1c5 0 8.5 1.6 11 5.1-1-5-4-10-11-11z"/></svg> Click here to <b>Reply</b></div>
+    </div>
+
+    <!-- EMAIL 6 -->
+    <div class="gmail">
+      <div class="gmail-toolbar">
+        <div class="gmail-toolbar-left">
+          <div class="gmail-tb-btn"><svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg></div>
+          <div class="gmail-tb-btn"><svg viewBox="0 0 24 24"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg></div>
+          <div class="gmail-tb-btn"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></div>
+        </div>
+        <div class="gmail-toolbar-right">
+          <span class="gmail-nav-text">389 of 512</span>
+          <div class="gmail-tb-btn"><svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg></div>
+          <div class="gmail-tb-btn"><svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg></div>
+        </div>
+      </div>
+      <div class="gmail-subject"><h2>RE: Social media content calendar</h2><span class="gmail-label">Inbox</span></div>
+      <div class="gmail-sender">
+        <div class="gmail-avatar av-teal">M</div>
+        <div class="gmail-sender-info">
+          <div class="gmail-sender-row"><span class="gmail-sender-name">Maria P.</span><span class="gmail-sender-email">&lt;m****p@h*****h.com&gt;</span><span class="gmail-sender-date">Feb 14, 2026, 10:30 AM</span></div>
+          <div class="gmail-to">to me &#9660;</div>
+        </div>
+        <span class="gmail-star starred">&#9733;</span>
+      </div>
+      <div class="gmail-body">
+        <p>I cannot believe you created 30 days of LinkedIn posts, Instagram captions, AND the email newsletter copy in one delivery. Our engagement is up 40% in just 3 weeks.</p>
+        <p>The content calendar spreadsheet you included makes my life so much easier. I just open it each morning and post. No more staring at a blank screen.</p>
+        <p>Already shared your contact with two other business owners in my network.</p>
+        <div class="gmail-sig"><div class="gmail-sig-name">Maria P.</div><div class="gmail-sig-role">Restaurant Owner | ************, United States</div></div>
+      </div>
+      <div class="gmail-reply-bar"><svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:#5f6368"><path d="M10 9V5l-7 7 7 7v-4.1c5 0 8.5 1.6 11 5.1-1-5-4-10-11-11z"/></svg> Click here to <b>Reply</b></div>
+    </div>
+
+  </div>
+</div>
+</section>
+
+<!-- GUARANTEE -->
+<section id="guarantee">
+<div class="container">
+  <div class="guarantee-box reveal">
+    <div class="g-icon">🛡️</div>
+    <h3>100% Satisfaction Guarantee</h3>
+    <p>If you are not happy with my work after unlimited revisions, you get a full refund. No questions asked. I have never had to issue one, but the guarantee exists because I stand behind every word I write.</p>
+  </div>
+</div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+<div class="container">
+  <div class="section-header reveal">
+    <div class="section-label">FAQ</div>
+    <h2 class="section-title">Questions? Answered.</h2>
+  </div>
+  <div class="faq-list reveal">
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">You are new on Freelancer. Why should I trust you?</div><div class="faq-a">I am new to the platform, not new to the work. I have been delivering content for local, national, and international clients for a while now. I just was not on freelancing platforms before. The email testimonials on this page are from real clients I have worked with directly. I am also happy to create a free sample specific to your project before you commit.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">How fast can you deliver?</div><div class="faq-a">Most projects are delivered within 24 hours. Blog posts and resumes often same day. Larger projects like business plans take 2 to 3 days. Rush delivery is available. Just tell me your deadline and I will make it work.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What if I am not happy with the result?</div><div class="faq-a">You get unlimited revisions. I will keep refining until you are 100% satisfied. In the rare case we cannot align, you get a full refund. Zero risk on your end.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Do you write in my brand voice?</div><div class="faq-a">Absolutely. Send me examples of your existing content, your brand guidelines, or just describe the tone you want. I match it precisely. First time clients get a free tone check draft so we are aligned before the full project.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Can you handle bulk orders?</div><div class="faq-a">Yes. Bulk is my specialty. 50 product descriptions, 30 social media posts, 10 blog articles. I handle high volume orders regularly with consistent quality across every piece.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What formats do you deliver in?</div><div class="faq-a">Microsoft Word, Google Docs, PDF, Excel or Google Sheets, PowerPoint, plain text, or copy paste ready. Whatever you need. Business plans include formatted Word docs. Data projects include Excel with formulas and charts.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Is the content original and plagiarism free?</div><div class="faq-a">100% original, every time. I can provide a plagiarism report with any order on request at no extra charge. Your content is yours exclusively.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Do you offer monthly retainers?</div><div class="faq-a">Yes, and retainer clients get priority delivery, discounted rates, and a dedicated content calendar. Perfect for businesses needing regular blog posts, social media, or email content. Message me to discuss.</div></div>
+  </div>
+</div>
+</section>
+
+<!-- CTA + CONTACT -->
+<section class="cta-final" id="contact">
+  <h2>Ready to get content that<br>actually works?</h2>
+  <p>Send me your brief. I will get back to you within a few hours.</p>
+  <div style="display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;margin-bottom:3rem;position:relative">
+    <a href="https://www.freelancer.com/u/deucalion23" target="_blank" class="btn btn-accent">Hire Me on Freelancer →</a>
+  </div>
+  <div style="max-width:500px;margin:0 auto;position:relative">
+    <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:2rem">
+      <h3 style="font-family:'Playfair Display',serif;font-size:1.3rem;margin-bottom:1.2rem;text-align:center">Or contact me directly</h3>
+      <div id="contactForm">
+        <div style="margin-bottom:1rem">
+          <label style="display:block;font-size:.8rem;font-weight:600;margin-bottom:.4rem;color:rgba(255,255,255,.6)">Name <span style="color:#c8553d">*</span></label>
+          <input type="text" id="cf-name" required style="width:100%;padding:.7rem 1rem;border-radius:8px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.05);color:#fff;font-size:.9rem;font-family:'Outfit',sans-serif;outline:none;transition:border .2s" onfocus="this.style.borderColor='rgba(200,85,61,.5)'" onblur="this.style.borderColor='rgba(255,255,255,.12)'" placeholder="Your full name">
+        </div>
+        <div style="margin-bottom:1rem">
+          <label style="display:block;font-size:.8rem;font-weight:600;margin-bottom:.4rem;color:rgba(255,255,255,.6)">Email <span style="color:#c8553d">*</span></label>
+          <input type="email" id="cf-email" required style="width:100%;padding:.7rem 1rem;border-radius:8px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.05);color:#fff;font-size:.9rem;font-family:'Outfit',sans-serif;outline:none;transition:border .2s" onfocus="this.style.borderColor='rgba(200,85,61,.5)'" onblur="this.style.borderColor='rgba(255,255,255,.12)'" placeholder="you@company.com">
+        </div>
+        <div style="margin-bottom:1.2rem">
+          <label style="display:block;font-size:.8rem;font-weight:600;margin-bottom:.4rem;color:rgba(255,255,255,.6)">Message <span style="color:rgba(255,255,255,.3);font-weight:400">(optional)</span></label>
+          <textarea id="cf-message" rows="4" style="width:100%;padding:.7rem 1rem;border-radius:8px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.05);color:#fff;font-size:.9rem;font-family:'Outfit',sans-serif;outline:none;resize:vertical;transition:border .2s" onfocus="this.style.borderColor='rgba(200,85,61,.5)'" onblur="this.style.borderColor='rgba(255,255,255,.12)'" placeholder="Tell me about your project..."></textarea>
+        </div>
+        <button onclick="submitContact()" id="cf-btn" style="width:100%;padding:.8rem;border-radius:99px;background:var(--accent);color:#fff;font-size:.95rem;font-weight:700;border:none;cursor:pointer;font-family:'Outfit',sans-serif;transition:all .25s;letter-spacing:.02em">Send Message →</button>
+        <div id="cf-status" style="text-align:center;margin-top:.8rem;font-size:.85rem;color:rgba(255,255,255,.5)"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>© 2026 Ravindra. Professional Content & Writing Services. All portfolio samples are for demonstration purposes. Real client work is confidential and significantly more detailed.</footer>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modalOverlay">
+<div class="modal">
+  <button class="modal-close" id="modalClose">✕</button>
+  <div class="modal-sample-tag">📌 Sample Work. Real projects are far more detailed and tailored.</div>
+  <h2 id="modalTitle"></h2>
+  <div class="meta" id="modalMeta"></div>
+  <div class="content" id="modalContent"></div>
+  <div class="modal-cta">
+    <p>Like what you see? Imagine what I can do for your specific project.</p>
+    <a href="https://www.freelancer.com/u/deucalion23" target="_blank" class="btn btn-dark">Hire Me for Your Project →</a>
+  </div>
+</div>
+</div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+const services=[
+{id:"blog",icon:"📝",name:"Blog Writing & Copywriting",price:"$20-$80/article",desc:"SEO blog posts, landing pages, ad copy, product pages that rank and convert.",works:[
+{t:"10 Best Project Management Tools in 2026",tag:"Tech/SaaS",d:"Comprehensive buyer roundup with SEO structure and comparison tables.",c:`<h3>Introduction</h3><p>Managing projects in 2026 looks nothing like it did five years ago. Distributed teams are the norm and AI is reshaping every workflow. The tools you choose matter more than ever.</p><h3>1. Linear</h3><p>Linear has become the default for fast moving engineering teams. Keyboard first interface, cycle based planning, and tight GitHub integration. Starting at $8/user/month.</p><h3>2. Notion</h3><p>Notion continues evolving beyond note taking into a legitimate PM platform. Databases, kanban boards, timeline views, and AI powered summaries make it the Swiss Army knife of productivity.</p><h3>Key Takeaway</h3><p>There is no one size fits all. Engineering teams pick Linear. Creative teams love Notion. Enterprise orgs need Asana. The best tool is the one your team actually uses.</p>`},
+{t:"How AI is Transforming E-Commerce",tag:"E-commerce",d:"Deep dive into AI personalization, dynamic pricing, and logistics automation.",c:`<h3>The AI Powered Shopping Experience</h3><p>Walk into any e-commerce platform today and AI is everywhere. Product recommendations, dynamic pricing that adjusts hourly, AI is the invisible engine driving modern online retail.</p><h3>Hyper Personalization</h3><p>Today's AI analyzes browsing patterns, purchase history, and even weather data. Shopify merchants using AI personalization report 35% higher average order values.</p>`},
+{t:"Complete Guide to Remote Work Productivity",tag:"Productivity",d:"Research backed tips for high output remote work.",c:`<h3>The 90 Minute Block System</h3><p>Your brain sustains deep focus for about 90 minutes. Structure your day around these blocks: 90 minutes focused work followed by a 20 minute break. Three blocks before lunch, two after. That is 7.5 hours of genuine output.</p>`},
+{t:"5 Cybersecurity Threats Every Business Must Know",tag:"Cybersecurity",d:"Security awareness for non-technical business owners.",c:`<p>43% of cyberattacks target small businesses. 60% of those hit close within six months. Enable multi-factor auth, use a password manager, back up off-site, train quarterly. Four steps that prevent 90% of attacks.</p>`},
+{t:"Why SaaS Companies Are Ditching Subscriptions",tag:"SaaS/Finance",d:"Analysis of usage based pricing shift.",c:`<p>From Snowflake to OpenAI, companies bet on usage based pricing. The hybrid model wins: base platform fee plus usage based components. Cost predictability for customers, growth alignment for vendors.</p>`},
+{t:"Beginner Guide to Index Fund Investing",tag:"Finance",d:"Jargon free investing guide for first timers.",c:`<p>Over any 20 year period, index funds outperform 90% of active funds. Open a free brokerage. Search for a total market index fund. Invest $50/month. Set auto invest. That is it.</p>`},
+{t:"The Rise of No-Code Tools for Startups",tag:"Startups",d:"How founders build MVPs without code.",c:`<p>Bubble for web apps. FlutterFlow for mobile. Supabase for backends. Stripe for payments. Zapier for automations. Idea to paying customers in weeks.</p>`},
+{t:"7 Email Marketing Mistakes Killing Open Rates",tag:"Marketing",d:"Common email blunders with data backed fixes.",c:`<p>"Monthly Newsletter" tells the reader nothing. Compare: "The pricing mistake that cost us $50K." Specific, curiosity driven subjects get 2-3x higher opens. Segment your list. Stop blasting everyone.</p>`},
+{t:"How to Build a Personal Brand on LinkedIn",tag:"Social/Career",d:"Step by step LinkedIn content strategy.",c:`<p>LinkedIn is the last organic growth platform. A well crafted post reaches 10,000+ people for free. Post 3-5x weekly. Mix: personal stories, tactical how-tos, contrarian takes. First two lines are everything.</p>`},
+{t:"Healthcare Tech Trends Reshaping Medicine",tag:"Healthcare",d:"5 emerging technologies and their impact on patient care.",c:`<p>AI detects certain cancers from images better than experienced radiologists. Continuous glucose monitors have moved beyond diabetes to general wellness. Healthcare is becoming predictive, personalized, and continuous.</p>`}
+]},
+{id:"resume",icon:"📄",name:"Resume & Cover Letter Writing",price:"$30-$100",desc:"ATS optimized resumes that get past screening software and impress hiring managers.",works:[
+{t:"Software Engineer Resume (FAANG Ready)",tag:"Tech",d:"Mid-level SWE resume with quantified achievements.",c:`<h3>ALEX CHEN</h3><p>San Francisco, CA | alex.chen@email.com</p><p><strong>Senior Software Engineer, TechCorp</strong></p><ul><li>Architected microservices migration reducing deployment time from 4 hours to 15 minutes</li><li>Led team of 4 delivering real-time analytics pipeline processing 500K events/second</li><li>Reduced infrastructure costs 35% through Kubernetes optimization</li></ul><h3>Why It Works</h3><p>Every bullet: action verb + quantified result. Summary is 2 lines. Skills woven into experience. ATS friendly with no tables, columns, or graphics.</p>`},
+{t:"Marketing Manager Resume",tag:"Marketing",d:"Results driven digital marketing resume with revenue metrics.",c:`<ul><li>Scaled paid acquisition from $50K to $300K/month maintaining 3.2x ROAS</li><li>Built content program: 150K organic monthly visitors in 12 months</li><li>Email nurture sequences converting 22% MQLs to SQLs, up from 8%</li></ul>`},
+{t:"Data Analyst Resume (Entry Level)",tag:"Data/Analytics",d:"Fresh graduate resume emphasizing projects and outcomes.",c:`<p>For entry level: projects replace experience. Each project framed as business outcome, not academic exercise.</p><ul><li>Built churn prediction model: 92% accuracy on 50K row dataset</li><li>Designed Tableau dashboard tracking $5M quarterly revenue across 4 regions</li></ul>`},
+{t:"Project Manager Resume (PMP)",tag:"Management",d:"Senior PM resume proving on-time, under-budget delivery.",c:`<p>Delivered $12M ERP implementation 2 weeks ahead of schedule, 8% under budget. Portfolio of 5 concurrent projects, 35 people. PM resumes prove: deliver on time, manage budgets, lead people.</p>`},
+{t:"Registered Nurse Resume",tag:"Healthcare",d:"Clinical nursing resume with patient outcomes.",c:`<p>ICU Registered Nurse, Level I Trauma Center. Zero central line infections over 18 months. HCAHPS scores 15% above unit average. Precepted 6 new graduate nurses.</p>`},
+{t:"Financial Analyst Resume",tag:"Finance",d:"Wall Street style resume with deal experience.",c:`<p>4 M&A transactions totaling $2.3B. 15+ DCF, LBO, comparable models built. Finance resumes: deal sizes, model types, transaction counts. CFA progress in header.</p>`},
+{t:"UX Designer Resume",tag:"Design",d:"Design resume balancing process, tools, and impact.",c:`<p>Led redesign of core dashboard (500K+ users): task completion 62% to 87%. 100+ user interviews. Design system: 120+ components, 50% faster handoff.</p>`},
+{t:"Sales Rep Resume (Quota Crusher)",tag:"Sales",d:"Revenue focused resume with quota attainment proof.",c:`<p>Closed $1.5M new ARR at 135% quota. Pipeline: $4.2M through outbound. Sales cycle shortened 90 to 62 days. Sales resumes are scorecards.</p>`},
+{t:"Teacher Resume (K-12)",tag:"Education",d:"Educator resume with measurable student outcomes.",c:`<p>State math proficiency 45% to 72% over 3 years. Blended learning model reduced achievement gap by 30%. Teaching resumes need outcome data.</p>`},
+{t:"Operations Manager Resume",tag:"Operations",d:"Supply chain resume with efficiency metrics.",c:`<p>3 distribution centers, 120+ staff, 50K+ daily orders. Fulfillment costs down 28%. On-time delivery 89% to 98.5%. Operations resumes: costs reduced, time saved, accuracy improved.</p>`}
+]},
+{id:"email",icon:"📧",name:"Email Copywriting",price:"$25-$150/seq",desc:"Cold outreach, sales sequences, welcome flows, newsletters that get opened and clicked.",works:[
+{t:"SaaS Welcome Sequence (5 Emails)",tag:"SaaS",d:"Onboarding flow converting trial users to paid.",c:`<h3>Email 1</h3><p><strong>Subject:</strong> You are in. Here is your first win in 3 minutes.</p><p>Welcome to [Product]. 2,000+ teams use us to [benefit]. Your first win is 3 minutes away: [quickstart link]</p><h3>Email 5</h3><p><strong>Subject:</strong> Your trial ends in 2 days</p><p>In 48 hours: no more [feature 1], [feature 2]. If [Product] saved you even one hour, it has paid for itself at $29/month.</p>`},
+{t:"Abandoned Cart Recovery (3 Emails)",tag:"E-commerce",d:"3 email sequence recovering lost sales.",c:`<p><strong>Email 1 (1 hour):</strong> "You left something behind." <strong>Email 2 (24 hours):</strong> Social proof + free returns. <strong>Email 3 (48 hours):</strong> 10% off code, midnight deadline.</p>`},
+{t:"B2B Cold Outreach (4 Touch)",tag:"B2B Sales",d:"Multi touch cold campaign for lead generation.",c:`<p><strong>Email 1:</strong> "Quick question about [Company]'s [process]." Observation + pain point + result you got for similar company. <strong>Email 4:</strong> "Closing the loop. No hard feelings."</p>`},
+{t:"Product Launch Sequence",tag:"Marketing",d:"Teaser to launch to social proof flow.",c:`<p>Teaser: "Something big on [date]." Launch: "It is here. Early adopter pricing." Proof: "500 teams in 48 hours."</p>`},
+{t:"Newsletter Launch Announcement",tag:"Media",d:"First issue announcement email.",c:`<p>Every [day], one email: most important [topic] news in 5 minutes. No fluff. No sponsored content. Just what matters.</p>`},
+{t:"Webinar Invitation Email",tag:"Events",d:"Registration driving invite.",c:`<p><strong>Subject:</strong> Free workshop: [Topic], [Date]. 45 minutes. 3 takeaways. Attendees get [bonus]. 200 spots.</p>`},
+{t:"Win Back Campaign (Dormant Users)",tag:"SaaS",d:"Re-engagement for users inactive 30+ days.",c:`<p>"We miss you. While you were away, we shipped 3 features you asked for." Then: "Come back, free month. Code: WELCOMEBACK."</p>`},
+{t:"Customer Review Request",tag:"E-commerce",d:"Post purchase email driving reviews.",c:`<p><strong>Subject:</strong> How is your [Product]? (30 seconds). Quick rating + review link. Takes 30 seconds. Means the world.</p>`},
+{t:"Referral Program Launch",tag:"Growth",d:"Referral incentive announcement.",c:`<p>Give $25, Get $25. Refer a friend, both get credit. No limit. Unique referral link included.</p>`},
+{t:"Annual Renewal Reminder",tag:"SaaS",d:"Subscription renewal with value recap.",c:`<p>Your subscription renews [Date]. This year: [X] projects created, [Y] hours saved, [Z] collaborators invited. Lot of value from $[price]/year.</p>`}
+]},
+{id:"social",icon:"📱",name:"Social Media Content",price:"$500-$2K/mo",desc:"30-day content calendars for LinkedIn, Instagram, X, TikTok, Facebook, Pinterest, YouTube.",works:[
+{t:"LinkedIn 30 Day Plan (Tech CEO)",tag:"LinkedIn",d:"Full month thought leadership with engagement strategy.",c:`<p><strong>Mon:</strong> "I fired our best salesperson. Here is why it was the best decision." <strong>Wed:</strong> "3 metrics every SaaS CEO should check before coffee." <strong>Fri:</strong> "Unpopular opinion: Product market fit is not a moment." Mix: 8 stories, 6 how-tos, 5 contrarian takes, 4 commentary, 4 questions, 3 BTS.</p>`},
+{t:"Instagram Plan (Fitness Brand)",tag:"Instagram",d:"30 posts with captions, hashtags, content types.",c:`<p><strong>Reel:</strong> "3 exercises you are doing wrong." <strong>Carousel:</strong> "What 1,500 calories actually looks like." Hashtag mix: high-volume, medium, niche. 15-20 per post, rotated.</p>`},
+{t:"X/Twitter Strategy (SaaS Startup)",tag:"X/Twitter",d:"Build in public daily tweet strategy.",c:`<p>Monday: weekly goal thread. Wednesday: behind the scenes metric. Friday: week recap + numbers. Sample: "Hit $10K MRR today. Took 14 months. Every mistake (thread)"</p>`},
+{t:"Facebook Plan (Local Restaurant)",tag:"Facebook",d:"Community focused monthly content.",c:`<p>10 food photos, 6 BTS, 5 specials, 4 customer spotlights, 3 community posts, 2 events.</p>`},
+{t:"TikTok Scripts (Personal Finance)",tag:"TikTok",d:"10 short form scripts with <3s hooks.",c:`<p>Hook: "Stop telling me to skip my $5 latte." Body: "Your latte is not the problem. Your invisible spending is." CTA: "Follow for money math."</p>`},
+{t:"Pinterest Strategy (Home Decor)",tag:"Pinterest",d:"Board structure and SEO optimized pin descriptions.",c:`<p>8 boards. 30 pins monthly. Each pin: vertical image, keyword title, 3-5 keyword description, product link.</p>`},
+{t:"YouTube Community Posts (Gaming)",tag:"YouTube",d:"30 engagement posts: polls, BTS, questions.",c:`<p>Poll: "Next video? A) Elden Ring B) Ranking Zelda C) $500 PC build." Question: "Game that got you into gaming?" BTS: "Editing at 2 AM. 47 boss deaths."</p>`},
+{t:"LinkedIn Company Page (HR Tech)",tag:"LinkedIn",d:"30-day brand awareness + lead gen calendar.",c:`<p>"87% of employees stay longer with better onboarding. Average program: 1 day of paperwork + a laptop."</p>`},
+{t:"Fashion E-Commerce Captions (50 Pack)",tag:"Instagram",d:"50 ready-to-paste captions.",c:`<p>"Just dropped. For the ones who set trends, not follow them." / "Outfit 1 or 2? Vote in stories." / "Sunday uniform: oversized knit + coffee + zero plans."</p>`},
+{t:"Social Media Audit + 90 Day Plan",tag:"Strategy",d:"Complete audit with growth strategy and KPIs.",c:`<p>Audit findings + 90-day plan: LinkedIn to 5x/week, X to 80/20 value ratio. Month 3 target: 6K LinkedIn followers, 500 newsletter subs.</p>`}
+]},
+{id:"seo",icon:"🔍",name:"SEO Article Writing",price:"$50-$200",desc:"Keyword optimized long form content designed to rank on Google and drive organic traffic.",works:[
+{t:"Best CRM Software for Small Business",tag:"SaaS",d:"3000 word buyer comparison, 12K monthly search volume.",c:`<p>Listicle comparison format. Quick pick table for skimmers, deep dives per option. HubSpot CRM: free forever, unlimited users. Shines for teams under 10. Falls short when you need automation.</p>`},
+{t:"How to Start a Dropshipping Business",tag:"E-commerce",d:"Evergreen pillar page, 40K monthly searches.",c:`<p>Not what TikTok makes it look like. Not passive income, not get rich quick. But legitimate with the right approach. Step by step from niche to first sale.</p>`},
+{t:"Remote Jobs That Pay Well (No Experience)",tag:"Careers",d:"High volume article targeting job seekers.",c:`<p>"Remote jobs no experience" at 28K monthly searches. 50+ categories researched, ranked by salary and entry barrier.</p>`},
+{t:"Keto Diet for Beginners: 2026 Guide",tag:"Health",d:"Evergreen health article, 90K+ monthly searches.",c:`<p>FAQ schema + ToC + clear heading hierarchy for featured snippet capture. Modern keto: sustainable and nutrient dense.</p>`},
+{t:"Best Standing Desks (Tested and Reviewed)",tag:"Product Review",d:"Affiliate review, 12 desks tested over 3 months.",c:`<p>Wobble tests, motor speed, build quality. Most expensive was not best. Best was not most expensive.</p>`},
+{t:"How to Write a Business Plan (Free Template)",tag:"Business",d:"Lead gen article, 22K monthly searches.",c:`<p>Free template captures emails. Article covers every section with examples.</p>`},
+{t:"Digital Marketing Strategy Guide 2026",tag:"Marketing",d:"Pillar page linking to 15+ supporting articles.",c:`<p>Topic cluster dominating "digital marketing" SERP. SEO, email, social, paid, content. Updated for AI era.</p>`},
+{t:"Best Accounting Software for Freelancers",tag:"Finance",d:"Comparison targeting freelancer pain points.",c:`<p>8 options compared on ease of use, invoicing, expense tracking, tax estimates, price.</p>`},
+{t:"How to Learn Python in 2026",tag:"Tech/Education",d:"6 month learning roadmap.",c:`<p>Fundamentals to projects to specialization to job search. Course recommendations and portfolio strategy.</p>`},
+{t:"Best Noise Canceling Headphones Under $200",tag:"Tech Review",d:"Budget review tested on flights and commutes.",c:`<p>10 headphones tested. Three stood out. One was under $80.</p>`}
+]},
+{id:"product",icon:"🛍️",name:"Product Descriptions",price:"$0.50-$5/ea",desc:"Shopify, Amazon, Etsy, WooCommerce. Conversion optimized descriptions in bulk.",works:[
+{t:"Wireless Earbuds (Premium Audio)",tag:"Electronics",d:"Benefit driven description with specs woven naturally.",c:`<p><strong>Silence the world. Hear what matters.</strong> Hybrid ANC blocks 98% ambient noise. 36 hour battery. IPX5 waterproof. Quick charge: 2 hours from 10 minutes.</p>`},
+{t:"Organic Cotton T-Shirt",tag:"Sustainable Fashion",d:"Eco friendly apparel with craftsmanship focus.",c:`<p><strong>The last t-shirt you will need this year.</strong> 100% GOTS certified organic cotton. Pre-shrunk, garment-dyed. No cracking, no fading. 12 colors. XS-3XL.</p>`},
+{t:"Smart Security Camera",tag:"Electronics",d:"Feature rich tech product.",c:`<p><strong>See everything. Miss nothing.</strong> 2K video. 360 degree pan tilt. AI person detection. Night vision 30ft. No monthly fees. Setup: 3 minutes.</p>`},
+{t:"Single Origin Coffee Beans",tag:"Food & Beverage",d:"Specialty food with origin story.",c:`<p>From Finca La Esperanza, Colombia, 1,800m elevation. Notes: dark chocolate, toasted almond, bright citrus. 12oz, whole bean, roasted to order.</p>`},
+{t:"Premium Yoga Mat",tag:"Fitness",d:"Quality focused fitness product.",c:`<p>6mm dense cushioning. Micro texture surface grips harder when wet. 72x26 inches. 2.5 lbs. PVC free, latex free.</p>`},
+{t:"Minimalist Leather Wallet",tag:"Accessories",d:"Luxury accessories with craftsmanship narrative.",c:`<p><strong>Slim enough for front pocket. Tough for a lifetime.</strong> Full grain Italian leather. Hand stitched. RFID blocking. 8 cards + cash. Lifetime guarantee.</p>`},
+{t:"Natural Face Moisturizer",tag:"Beauty",d:"Clean beauty with ingredient transparency.",c:`<p>Hyaluronic acid + Vitamin C + Niacinamide + Squalane. No fillers, no fragrance. Absorbs in seconds. All skin types. Cruelty free. Vegan.</p>`},
+{t:"Kids Educational Tablet",tag:"Kids/Tech",d:"Parent focused description.",c:`<p><strong>Screen time they will learn from.</strong> 500+ teacher curated apps. Parental controls from your phone. Drop tested kid proof case. 10 hour battery.</p>`},
+{t:"Standing Desk Converter",tag:"Office",d:"Zero assembly ergonomic product.",c:`<p>Any desk becomes a standing desk in 3 seconds. Gas spring lift. 32 inch surface. Cable management. 35 lb rated. Assembly: zero.</p>`},
+{t:"Insulated Water Bottle",tag:"Lifestyle",d:"Everyday product with strong benefits.",c:`<p><strong>Cold 24 hours. Hot 12. No sweat.</strong> Double wall vacuum. BPA free. Dishwasher safe. Leakproof. 24oz. 8 colors.</p>`}
+]},
+{id:"rewrite",icon:"🔄",name:"Rewriting & Translation",price:"$20-$60",desc:"Paraphrasing, tone shifts, format conversion, translation, and content refreshes.",works:[
+{t:"Academic Paper to Blog Post",tag:"Academic",d:"Dense research rewritten as accessible content.",c:`<h3>Before</h3><p>"The empirical findings suggest a statistically significant correlation (p < 0.01) between hybrid remote models and satisfaction metrics..."</p><h3>After</h3><p>"The research is clear: hybrid employees are significantly happier. Stop debating hybrid. Start offering it."</p>`},
+{t:"Legal Terms to Plain English",tag:"Legal",d:"Complex legalese simplified.",c:`<p><strong>Before:</strong> "The Licensor hereby grants a non-exclusive, non-transferable, revocable license..." <strong>After:</strong> "We are giving you permission to use our service. Can not share your account."</p>`},
+{t:"Tech Docs to User Guide",tag:"Tech",d:"Developer documentation rewritten for end users.",c:`<p><strong>Before:</strong> "Authenticate via OAuth 2.0 by sending a POST..." <strong>After:</strong> "Click Connect Account. Enter username and password. Click Authorize. Done."</p>`},
+{t:"50 Page Report to Executive Summary",tag:"Business",d:"Full report distilled to 250 word brief.",c:`<p>Key findings, recommendations, data points. 250 words capturing everything a CEO needs in 2 minutes.</p>`},
+{t:"Old Blog Post to 2026 Update",tag:"Content Refresh",d:"Outdated article refreshed with current data.",c:`<p>Statistics updated. Tools replaced. AI sections added. Meta refreshed. Result: page 3 to position 4 in 6 weeks.</p>`},
+{t:"Corporate Copy to Conversational",tag:"Web Copy",d:"Stiff website language humanized.",c:`<p><strong>Before:</strong> "Our organization leverages cutting-edge synergistic value propositions..." <strong>After:</strong> "We build tools that help you work smarter. No jargon."</p>`},
+{t:"Press Release to Social Posts",tag:"PR",d:"Formal PR broken into platform content.",c:`<p><strong>LinkedIn:</strong> "We raised $25M. But what matters more: 40 engineers building what customers asked for." <strong>Tweet:</strong> "$25M Series B. Now the real work begins."</p>`},
+{t:"Product Manual to Quick Start Guide",tag:"Technical",d:"100 page manual to 1 page essentials.",c:`<p>5 essential steps. Everything else eliminated. Customer support tickets dropped 30%.</p>`},
+{t:"English to Spanish Localization",tag:"Translation",d:"Full website localized for Spanish markets.",c:`<p>Cultural references adapted. Idioms localized. CTAs rewritten in natural phrasing. Reads like originally written in Spanish.</p>`},
+{t:"Dissertation Abstract Rewriting",tag:"Academic",d:"Abstract refined for journal word limits.",c:`<p>500 word abstracts to 250 without losing methodology or findings. APA, MLA, Chicago compliance.</p>`}
+]},
+{id:"youtube",icon:"🎬",name:"YouTube Script Writing",price:"$50-$200",desc:"Hooks that stop the scroll, retention that keeps viewers, CTAs that grow your channel.",works:[
+{t:"5 AI Tools Replacing Jobs in 2026",tag:"Tech/AI",d:"10 min faceless script with retention hooks.",c:`<h3>Hook (0-30s)</h3><p>"Five jobs that paid six figures last year are being automated right now. The tools doing it cost less than your Netflix. If your job is on this list, you have about 18 months."</p><h3>Retention Hooks</h3><p>Every 2 minutes: "But the next one shocked me..." / "Stay for number 5, it affects almost everyone."</p>`},
+{t:"How I Built a $10K/Month Side Hustle",tag:"Business",d:"Story driven script with 3 act structure.",c:`<p>Act 1: $200 in bank, rent due. Act 2: The discovery and first $100. Act 3: Scaling to $10K. Relatable struggle to actionable insight to inspiration.</p>`},
+{t:"History of the Internet in 15 Minutes",tag:"Educational",d:"Documentary style educational script.",c:`<p>Hook: "Every second: 6,000 tweets, 40,000 Google searches. 60 years ago: two computers sending 'login' and crashing after two letters." One era per 2 minutes.</p>`},
+{t:"Top 10 Budget Travel Destinations",tag:"Travel",d:"Listicle with B-roll suggestions.",c:`<p>"Albania: Europe's best kept secret. Beaches rivaling Greece, one third the price. Full meal: $8. Boutique hotel: $35/night. Go before everyone catches on."</p>`},
+{t:"iPhone vs Android (After 6 Months)",tag:"Tech",d:"Comparison with verdict withheld until end.",c:`<p>6 categories head to head. Camera, Battery, Ecosystem, Customization, Privacy, Value. Final verdict at last 60 seconds. Maximizes watch time.</p>`},
+{t:"What No Sleep Does to Your Body",tag:"Science",d:"Science explainer with timeline format.",c:`<p>24 hours = cognitive impairment equal to legal intoxication. 72 hours = hallucinations. Timeline format with biology explained simply.</p>`},
+{t:"How to Start Investing with $100",tag:"Finance",d:"Beginner friendly finance script.",c:`<p>"$100 today in an index fund + $100/month = $36,000 in 15 years. Not crypto moonshots. Boring, reliable funds."</p>`},
+{t:"Day in the Life of a Remote Engineer",tag:"Lifestyle",d:"Honest DITL script.",c:`<p>6:30 AM to 7 PM. Honest, not aspirational. Messy desk, debugging frustration, Slack during lunch. Relatable beats aspirational for retention.</p>`},
+{t:"7 Supermarket Psychology Tricks",tag:"Psychology",d:"Edutainment revealing manipulation tactics.",c:`<p>Decompression Zone: first 10 feet is a dead zone. Flowers and bakery past entrance. Pleasant smell slows you down, puts you in buying mode.</p>`},
+{t:"20 Minute Home Workout (No Equipment)",tag:"Fitness",d:"Follow-along script with form cues.",c:`<p>4 circuits, 5 minutes each. 4 exercises per circuit: 40s work, 20s rest. Form cues and motivation between circuits.</p>`}
+]},
+{id:"business",icon:"💼",name:"Business Plans & Pitch Decks",price:"$100-$500",desc:"Investor ready plans with financial projections, market analysis, and formatted pitch decks.",works:[
+{t:"AI Analytics SaaS (Full Plan)",tag:"SaaS/AI",d:"Complete plan with 3 year financials.",c:`<p>Enterprise analytics for SMBs without technical expertise. 73% of SMBs lack resources to use their data. $33.3B market by 2027. Usage based from $49/month. Seeking $1.5M seed. Projected: $500K Y1, $2.1M Y2, $5.8M Y3.</p>`},
+{t:"Farm to Table Restaurant Plan",tag:"Food & Beverage",d:"60 seat restaurant with cost analysis.",c:`<p>Startup: $380K. Monthly revenue at 75% capacity: $120K. Food cost: 30%. Labor: 32%. Break even: Month 8.</p>`},
+{t:"Sustainable Fashion DTC Plan",tag:"E-commerce",d:"Direct to consumer brand with go-to-market.",c:`<p>Phase 1: 15 core products. Phase 2: Micro influencer partnerships. Phase 3: Pop-ups in 3 cities. Year 1 target: $400K.</p>`},
+{t:"Mental Health App Plan",tag:"Health Tech",d:"AI guided CBT app with acquisition strategy.",c:`<p>$15/month vs $150/session therapy. Beta: 2,000 users, 4.7 rating, 65% retention. Target: 50K users Year 1.</p>`},
+{t:"Digital Transformation Consulting",tag:"Services",d:"Solo consulting practice with pricing tiers.",c:`<p>Discovery: $5K. Strategy: $15-25K. Retainer: $10K/month. Year 1 target: $300K.</p>`},
+{t:"Boutique Fitness Studio",tag:"Fitness",d:"Hybrid in-person and virtual model.",c:`<p>In-studio: $149/month (200 members). Virtual: $29/month (500 members). Drop-in: $25. Year 1: $540K.</p>`},
+{t:"Real Estate Investment Plan",tag:"Real Estate",d:"Multifamily acquisition with ROI projections.",c:`<p>4-12 unit properties in high growth cities. Cap rate: 8-10%. Cash on cash: 12-15%. 5 year equity: $2M.</p>`},
+{t:"EdTech Cohort Platform",tag:"Education",d:"Live learning with B2B and B2C model.",c:`<p>B2C: $299-$499/course. B2B: $10K-$50K corporate. Instructor 60/40 share.</p>`},
+{t:"Specialty Coffee Shop + Co-Working",tag:"F&B",d:"Dual model cafe with workspace revenue.",c:`<p>15 co-working seats at $15/day or $199/month. Avg ticket: $7.50. 200 daily transactions. Break even: Month 6.</p>`},
+{t:"Fintech Pitch Deck (12 Slides)",tag:"Fintech",d:"Investor deck with narrative arc.",c:`<p>12 slides: Problem to Traction to Ask. "78M Americans are credit invisible. We fix that in 30 days."</p>`}
+]},
+{id:"proofread",icon:"✏️",name:"Proofreading & Editing",price:"$20-$50/hr",desc:"Grammar, tone, clarity, APA/MLA formatting, developmental edits for any content type.",works:[
+{t:"Academic Paper (Grammar & Clarity)",tag:"Academic",d:"Research paper cleaned and tightened.",c:`<p><strong>Before:</strong> "The results of the study was showing that there is a significant impact..."</p><p><strong>After:</strong> "The results demonstrate a significant impact of social media on adolescent mental health, consistent with Smith et al. (2022)."</p><p>Subject-verb agreement fixed. Redundancy cut. Citations corrected. 40% shorter.</p>`},
+{t:"Novel Manuscript (Developmental Edit)",tag:"Fiction",d:"Fiction edited for pacing and tension.",c:`<p><strong>Before:</strong> "She walked in. The room was dark. She felt scared."</p><p><strong>After:</strong> "The room swallowed her. Dark, silent, smelling of dust and something metallic. Her hand found the switch. There it was: an envelope, her name in handwriting she had not seen in seven years."</p>`},
+{t:"Business Proposal (Professional Polish)",tag:"Business",d:"Casual proposal elevated to executive tone.",c:`<p><strong>Before:</strong> "We think we can help alot."</p><p><strong>After:</strong> "Our team has delivered 15 projects of similar scope, consistently exceeding targets."</p>`},
+{t:"Website Copy (UX Writing Edit)",tag:"Web/UX",d:"Wordy site text trimmed for conversion.",c:`<p><strong>Before (38 words):</strong> "We are a company that provides solutions..."</p><p><strong>After (12 words):</strong> "Grow faster with tools built for your team. 2,000+ served."</p>`},
+{t:"Legal Contract (Consistency Audit)",tag:"Legal",d:"Contract checked for terminology and cross-references.",c:`<p>"Client" vs "Customer" inconsistency fixed. Date formats standardized. Cross-reference errors corrected. Ambiguous Oxford comma resolved.</p>`},
+{t:"Resume (ATS Optimization)",tag:"Career",d:"Resume restructured for ATS compatibility.",c:`<p>Creative formatting replaced with ATS friendly layout. Keywords added from job description. Passive to active voice. Quantified results added.</p>`},
+{t:"Blog Post (SEO & Readability Edit)",tag:"Content",d:"Article optimized for search and mobile reading.",c:`<p>Keyword placed in H1, first paragraph, 2 H2s. Long paragraphs broken for mobile. Flesch score: 45 to 62. Meta description added.</p>`},
+{t:"Email Campaign (Tone & CTA Edit)",tag:"Marketing",d:"Flat emails rewritten for engagement.",c:`<p><strong>Before:</strong> Subject: "New Product Available." <strong>After:</strong> Subject: "The thing you have been asking for? It is here." Curiosity driven. 38% higher opens.</p>`},
+{t:"Thesis (APA 7th Edition Formatting)",tag:"Academic",d:"Dissertation reformatted to APA 7th.",c:`<p>85 citations updated. Heading levels standardized. Running head corrected. 23 missing DOIs added. 4 orphaned citations found.</p>`},
+{t:"Children's Book (Age-Appropriate Edit)",tag:"Children's",d:"Picture book simplified for ages 4-6.",c:`<p><strong>Before:</strong> "The diminutive canine traversed the expansive meadow..."</p><p><strong>After:</strong> "The little dog ran across the big green field. He ran and ran! Then he found something in the tall grass. What could it be?"</p>`}
+]},
+{id:"excel",icon:"📊",name:"Excel & Spreadsheet Services",price:"$30-$100",desc:"Financial models, dashboards, data cleanup, formulas, pivot tables, charts in Excel or Google Sheets.",works:[
+{t:"Startup Financial Model (3 Year)",tag:"Finance",d:"Revenue projections, expenses, break even with charts.",c:`<p>MRR x growth rate with churn. Fixed + variable expenses. Break even analysis. Cash runway. Monthly and annual P&L. Investor ready formatting with charts.</p>`},
+{t:"Sales Pipeline Tracker",tag:"CRM/Sales",d:"Deal tracking with stage progression and forecasting.",c:`<p>Lead to Qualified to Proposal to Closed. Auto: pipeline value per stage, win rate by rep, weighted forecast, days-in-stage alerts. Dashboard tab.</p>`},
+{t:"Marketing Budget Template",tag:"Marketing",d:"Channel by channel budget with ROI tracking.",c:`<p>Channels: Paid Search, Social, Email, Content, Events. Planned vs actual. Auto: CPA, ROAS, variance %. Year over year comparison.</p>`},
+{t:"Employee Shift Scheduler",tag:"HR/Operations",d:"Weekly planning with conflict detection.",c:`<p>Employee roster. Weekly grid. Auto highlights: overtime, double booking, understaffing. Total hours per employee, cost per shift.</p>`},
+{t:"Inventory Management Tracker",tag:"E-commerce",d:"Stock levels, reorder points, supplier management.",c:`<p>Product catalog with SKUs. Auto-reorder alerts. Supplier lead times. Cost tracking. Monthly valuation.</p>`},
+{t:"Personal Budget Planner",tag:"Personal Finance",d:"Monthly income/expense tracker with goals.",c:`<p>Income sources. Expense categories. Auto: remaining budget, savings rate, category splits. 12 month trend charts. Debt payoff calculator.</p>`},
+{t:"Project Timeline (Gantt Chart)",tag:"Project Management",d:"Tasks with dependencies, milestones, progress.",c:`<p>Task list with dates. Auto generated Gantt bars via conditional formatting. Dependencies linked. Milestones marked. Critical path highlighted.</p>`},
+{t:"Real Estate Investment Calculator",tag:"Real Estate",d:"Property analysis with ROI and cash flow.",c:`<p>Purchase price, mortgage terms, rental income minus expenses. Cap rate, cash on cash return, equity buildup. 10 year projection.</p>`},
+{t:"Invoice Template (Auto Calculating)",tag:"Freelancing",d:"Professional invoice with tax and payment tracking.",c:`<p>Client info, line items, rates. Auto: subtotal, tax, total, balance. Payment status tracking. Invoice numbering. Export ready.</p>`},
+{t:"Data Cleanup & Transformation",tag:"Data",d:"Messy dataset cleaned, deduplicated, restructured.",c:`<p>Duplicates removed. Formats standardized. Columns split/merged. VLOOKUP cross-referencing. Pivot table summary. Before/after comparison.</p>`}
+]},
+{id:"education",icon:"🎓",name:"Educational Content & Articles",price:"$40-$150",desc:"Course material, lesson plans, study guides, e-learning scripts, tutorials, and educational blog posts.",works:[
+{t:"Python for Beginners (10 Lesson Curriculum)",tag:"Tech Education",d:"Complete course outline with objectives and exercises.",c:`<p>Lesson 1: Variables & Data Types. Lesson 5: Functions & Scope. Lesson 10: Capstone Project. Each lesson: 30 min content + hands-on exercise + quiz.</p>`},
+{t:"Personal Finance 101 (Student Guide)",tag:"Financial Literacy",d:"Textbook style chapter on budgeting and investing.",c:`<p>What is money? Budgeting (50/30/20). Emergency funds. Compound interest. Index funds. Each section: explanation, example, key takeaway, practice problem.</p>`},
+{t:"How Photosynthesis Works (Middle School)",tag:"Science",d:"Grade 6-8 article with quiz questions.",c:`<p>Light reactions to Calvin cycle to real world connection. 8th grade reading level. Vocabulary definitions, diagram descriptions, 5 comprehension questions, 1 experiment suggestion.</p>`},
+{t:"Machine Learning for Non Engineers",tag:"Tech/Business",d:"Executive friendly explainer with business analogies.",c:`<p>"ML is like training an employee with 1 million examples instead of a 10 page manual." Supervised vs unsupervised, training data, overfitting, real business applications. No math, no code.</p>`},
+{t:"History of the Civil Rights Movement",tag:"History",d:"Research backed essay for high school/college.",c:`<p>Brown v. Board (1954) through Civil Rights Act (1964). Primary sources. Key figures. Cause and effect structure. Discussion questions.</p>`},
+{t:"Nutrition Workshop Script (Corporate)",tag:"Health/Corporate",d:"45 minute workshop on workplace nutrition.",c:`<p>3 sections: Why nutrition matters for productivity. Practical meal prep. Interactive audit. Includes slides outline, speaker notes, handout content.</p>`},
+{t:"Digital Literacy for Seniors",tag:"Community Education",d:"Beginner friendly smartphone and internet guide.",c:`<p>Lesson 1: Turning on your phone. Lesson 2: Texting. Lesson 3: Photos. Lesson 4: Staying safe online. Large font. Simple language. Step by step. No jargon.</p>`},
+{t:"Introduction to Economics (E-Learning Script)",tag:"Academic",d:"Animated explainer script on supply and demand.",c:`<p>5 minute script. Opens with relatable scenario (concert tickets). Builds to supply demand curves. Explains equilibrium. Animation cues throughout.</p>`},
+{t:"SAT Math Prep (Practice Problems)",tag:"Test Prep",d:"25 problems with step-by-step solutions.",c:`<p>5 difficulty tiers. Each: question, step by step solution, common mistakes, shortcut tips. Algebra, geometry, data analysis, advanced math.</p>`},
+{t:"Climate Change Research Guide",tag:"Environmental Science",d:"Research framework with sources and argument structure.",c:`<p>Thesis options. Evidence by category: temperature, ice cores, sea levels, ecosystems. Counter-arguments addressed. Citation examples. Bibliography template.</p>`}
+]}
+];
+
+let active=services[0].id;
+
+// MARQUEE
+const skills=["Blog Writing","SEO Articles","Copywriting","Resume Writing","YouTube Scripts","Email Sequences","Social Media","Product Descriptions","Business Plans","Pitch Decks","Excel Spreadsheets","Financial Models","Educational Content","Course Material","Lesson Plans","Proofreading","Editing","Rewriting","Translation","Data Cleanup","Technical Writing","Landing Pages","Ad Copy","Press Releases","White Papers","Case Studies","Newsletters","Study Guides","E-Learning Scripts"];
+document.getElementById('marquee').innerHTML=[...skills,...skills].map(s=>`<span>${s}</span>`).join('');
+
+// SERVICES
+document.getElementById('servicesGrid').innerHTML=services.map(s=>`
+<div class="service-card" onclick="setActive('${s.id}');document.getElementById('work').scrollIntoView({behavior:'smooth'})">
+<div class="sc-icon">${s.icon}</div>
+<div class="sc-title">${s.name}</div>
+<div class="sc-desc">${s.desc}</div>
+<div class="sc-price">${s.price}</div>
+<div class="sc-arrow">→</div>
+</div>`).join('');
+
+function renderTabs(){document.getElementById('workTabs').innerHTML=services.map(s=>`<button class="wtab ${s.id===active?'active':''}" onclick="setActive('${s.id}')">${s.icon} ${s.name}</button>`).join('')}
+function renderWork(){const s=services.find(x=>x.id===active);document.getElementById('workGrid').innerHTML=s.works.map((w,i)=>`
+<div class="wcard" onclick="openModal('${active}',${i})">
+<div class="wcard-top"><span class="wcard-badge">${w.tag}</span><span class="wcard-sample">Sample Work</span></div>
+<div class="wcard-body"><h3>${w.t}</h3><p>${w.d}</p></div>
+<div class="wcard-footer"><span class="wcard-read">Read full sample →</span></div>
+</div>`).join('')}
+function setActive(id){active=id;renderTabs();renderWork()}
+function openModal(sid,i){const s=services.find(x=>x.id===sid),w=s.works[i];document.getElementById('modalTitle').textContent=w.t;document.getElementById('modalMeta').textContent=s.name+' · '+w.tag+' · Sample Work';document.getElementById('modalContent').innerHTML=w.c;document.getElementById('modalOverlay').classList.add('open');document.body.style.overflow='hidden'}
+function closeModal(){document.getElementById('modalOverlay').classList.remove('open');document.body.style.overflow=''}
+document.getElementById('modalClose').onclick=closeModal;
+document.getElementById('modalOverlay').onclick=e=>{if(e.target===e.currentTarget)closeModal()};
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+function toggleFaq(el){el.classList.toggle('open');el.nextElementSibling.classList.toggle('open')}
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+renderTabs();renderWork();
+function submitContact(){
+var name=document.getElementById('cf-name').value.trim();
+var email=document.getElementById('cf-email').value.trim();
+var msg=document.getElementById('cf-message').value.trim();
+var status=document.getElementById('cf-status');
+var btn=document.getElementById('cf-btn');
+if(!name){status.textContent='Please enter your name.';status.style.color='#c8553d';return}
+if(!email||!email.includes('@')){status.textContent='Please enter a valid email.';status.style.color='#c8553d';return}
+btn.textContent='Sending...';btn.disabled=true;
+fetch('https://formspree.io/f/mreowlkg',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({name:name,email:email,message:msg||'(no message)'})}).then(function(r){if(r.ok){status.textContent='Message sent! I will get back to you soon.';status.style.color='#2d7a4f';btn.textContent='Sent ✓';document.getElementById('cf-name').value='';document.getElementById('cf-email').value='';document.getElementById('cf-message').value=''}else{throw new Error()}}).catch(function(){status.textContent='Something went wrong. Try again.';status.style.color='#c8553d';btn.textContent='Send Message →';btn.disabled=false})
+}
+</script>
+</body>
+</html>
